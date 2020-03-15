@@ -1,0 +1,20 @@
+{
+  "name": "fcc-basic-node-and-express",
+  "version": "0.4.0",
+  "keywords": [
+    "freecodecamp",
+    "coderoad"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coderoad/fcc-basic-node-and-express"
+  },
+  "license": "MIT",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "cd coderoad && npm test"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
