@@ -15,6 +15,8 @@
     "start": "node src/server.js",
     "test": "cd coderoad && npm test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {}
 }
