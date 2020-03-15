@@ -15,7 +15,9 @@
     "start": "node src/server.js",
     "test": "mocha"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "mocha": "^7.0.1",
     "mocha-tap-reporter": "^0.1.3"
