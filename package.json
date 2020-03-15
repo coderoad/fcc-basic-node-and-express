@@ -1,0 +1,23 @@
+{
+  "name": "fcc-basic-node-and-express",
+  "version": "0.3.0",
+  "keywords": [
+    "freecodecamp"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shmck/coderoad-fcc-basic-node-and-express"
+  },
+  "license": "MIT",
+  "main": "src/server.js",
+  "scripts": {
+    "programmatic-test": "mocha --reporter=mocha-tap-reporter",
+    "start": "node src/server.js",
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^7.0.1",
+    "mocha-tap-reporter": "^0.1.3"
+  }
+}
