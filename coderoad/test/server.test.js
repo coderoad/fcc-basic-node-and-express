@@ -23,6 +23,21 @@ describe("server", () => {
         assert.ok(response.text.match(/body {/));
       });
   });
+  // 5.1
+  it('should return json from the "/json" endpoint', () => {
+    return request(server)
+      .get("/json")
+      .expect("Content-type", /application\/json/)
+      .expect(200)
+      .then(response => {
+        assert.ok(response.body, "Body does not contain json");
+        assert.equal(
+          response.body.message,
+          "Hello json",
+          'Message should be "Hello json"'
+        );
+      });
+  });
   after(() => {
     server.close();
   });
