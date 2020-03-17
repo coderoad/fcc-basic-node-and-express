@@ -3,13 +3,14 @@ const request = require("supertest");
 const server = require("../src/server");
 
 describe("server", () => {
-  // 2.1
-  it('should return "Hello Express" when GET "/" is called', () => {
+  // 3.1
+  it('should return HTML when GET "/" is called', () => {
     return request(server)
       .get("/")
+      .expect("Content-type", /html/)
       .expect(200)
       .then(response => {
-        assert.equal(response.text, "Hello Express");
+        assert.ok(response.text.match(/<!DOCTYPE html>/));
       });
   });
   after(() => {
