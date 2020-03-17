@@ -8,6 +8,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/json", (req, res) => {
+  res.json({ message: "Hello json" });
+});
+
 const server = app.listen(process.env.PORT || 3000);
 
 // -- DO NOT EDIT BELOW THIS LINE
