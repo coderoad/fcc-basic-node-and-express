@@ -1,17 +1,18 @@
 const assert = require("assert");
-const sinon = require("sinon");
+const request = require("supertest");
+const server = require("../src/server");
 
 describe("server", () => {
-  // 1.2
-  it('should log "Hello World"', () => {
-    const spy = sinon.spy(console, "log");
-    // spy on the server
-    const server = require("../src/server");
-    const isCalled = spy.called
-    const result = spy.calledWith("Hello World");
-    // ensure connection is closed 
+  // 2.1
+  it('should return "Hello Express" when GET "/" is called', () => {
+    return request(server)
+      .get("/")
+      .expect(200)
+      .then(response => {
+        assert.equal(response.text, "Hello Express");
+      });
+  });
+  after(() => {
     server.close();
-    assert.ok(isCalled, 'console.log not called')
-    assert.ok(result, '"Hello World was not logged');
-  }).timeout(1000)
+  });
 });
