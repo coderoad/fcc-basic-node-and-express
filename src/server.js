@@ -6,6 +6,13 @@ const app = express();
 
 app.use(express.static(__dirname + "/public"));
 
+app.use((req, res, next) => {
+  // method path - ip
+  // eg. GET /json - ::ffff:127.0.0.1
+  console.log(`${req.method} ${req.path} - ${req.ip}`);
+  next();
+});
+
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
