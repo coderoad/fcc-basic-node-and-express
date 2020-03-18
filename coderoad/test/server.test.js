@@ -81,6 +81,13 @@ describe("server", () => {
         );
       });
   });
+  // 7.1
+  it("should have `method path - ip` logger middleware", async () => {
+    const spy = sinon.spy(console, "log");
+    await request(server).get("/json");
+    const result = spy.calledWith("GET /json - ::ffff:127.0.0.1");
+    assert.ok(result);
+  });
   after(() => {
     sandbox.restore();
     server.close();
