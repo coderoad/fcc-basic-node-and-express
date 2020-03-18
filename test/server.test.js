@@ -5,6 +5,8 @@ const {
   promises: { readFile }
 } = require("fs");
 const path = require("path");
+const sinon = require("sinon");
+let sandbox = sinon.createSandbox();
 
 describe("server", () => {
   // 3.1
@@ -27,21 +29,6 @@ describe("server", () => {
         assert.ok(response.text.match(/body {/));
       });
   });
-  // 5.1
-  it('should return json from the "/json" endpoint', () => {
-    return request(server)
-      .get("/json")
-      .expect("Content-type", /application\/json/)
-      .expect(200)
-      .then(response => {
-        assert.ok(response.body, "Body does not contain json");
-        assert.equal(
-          response.body.message,
-          "Hello json",
-          'Message should be "Hello json"'
-        );
-      });
-  });
   // 6.5
   it("should load the dotenv config", async () => {
     const serverFilePath = path.join(process.cwd(), "src", "server.js");
@@ -55,6 +42,39 @@ describe("server", () => {
       }
     }
     assert.ok(match, "should load dotenv config at the top of the file");
+  });
+  // 6.6
+  it('should return json from the "/json" endpoint', () => {
+    sandbox.stub(process.env, "MESSAGE_STYLE").value("");
+    return request(server)
+      .get("/json")
+      .expect("Content-type", /application\/json/)
+      .expect(200)
+      .then(response => {
+        assert.ok(response.body, "Body does not contain json");
+        assert.equal(
+          response.body.message,
+          "Hello json",
+          'Message should be "Hello json"'
+        );
+      });
+    sandbox.restore();
+  });
+  it('should return json from the "/json" endpoint', () => {
+    sandbox.stub(process.env, "MESSAGE_STYLE").value("uppercase");
+    return request(server)
+      .get("/json")
+      .expect("Content-type", /application\/json/)
+      .expect(200)
+      .then(response => {
+        assert.ok(response.body, "Body does not contain json");
+        assert.equal(
+          response.body.message,
+          "HELLO JSON",
+          'Message should be "HELLO JSON" when process.env.MESSAGE_STYLE is "uppercase"'
+        );
+      });
+    sandbox.restore();
   });
   after(() => {
     server.close();
