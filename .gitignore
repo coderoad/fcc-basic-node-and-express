@@ -4,3 +4,6 @@ package-lock.json
 
 # Tutorial
 CODEROAD.md
+
+# Secrets
+.env
