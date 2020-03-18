@@ -14,4 +14,15 @@ describe("package.json", () => {
       )
     );
   });
+  // 6.4
+  it('should have "dotenv" installed', async () => {
+    assert.ok(
+      await doesNotThrow(() =>
+        isModuleInstalled({
+          name: "dotenv",
+          type: "devDependency"
+        })
+      )
+    );
+  });
 });
