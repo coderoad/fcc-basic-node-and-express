@@ -1,6 +1,10 @@
 const assert = require("assert");
 const request = require("supertest");
 const server = require("../src/server");
+const {
+  promises: { readFile }
+} = require("fs");
+const path = require("path");
 
 describe("server", () => {
   // 3.1
@@ -37,6 +41,20 @@ describe("server", () => {
           'Message should be "Hello json"'
         );
       });
+  });
+  // 6.5
+  it("should load the dotenv config", async () => {
+    const serverFilePath = path.join(process.cwd(), "src", "server.js");
+    const serverFile = await readFile(serverFilePath, "utf8");
+    const lines = serverFile.split("/n");
+    const firstLines = lines.slice(0, 5);
+    let match = false;
+    for (const line of firstLines) {
+      if (line.match(/require.+dotenv.+\.config()/)) {
+        match = true;
+      }
+    }
+    assert.ok(match, "should load dotenv config at the top of the file");
   });
   after(() => {
     server.close();
