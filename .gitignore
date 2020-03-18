@@ -5,3 +5,6 @@ yarn.lock
 
 # Tutorial
 CODEROAD.md
+
+# Secrets
+.env
