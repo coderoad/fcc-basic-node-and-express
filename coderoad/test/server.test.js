@@ -1,6 +1,11 @@
 const assert = require("assert");
 const request = require("supertest");
 const server = require("../../src/server");
+const path = require("path");
+const util = require("util");
+const fs = require("fs");
+
+const readFile = util.promisify(fs.readFile);
 
 describe("server", () => {
   // 3.1
@@ -19,7 +24,7 @@ describe("server", () => {
       .get("/style.css")
       .expect("Content-type", /css/)
       .expect(200)
-      .then(response => {
+      .then((response) => {
         assert.ok(response.text.match(/body {/));
       });
   });
@@ -29,7 +34,7 @@ describe("server", () => {
       .get("/json")
       .expect("Content-type", /application\/json/)
       .expect(200)
-      .then(response => {
+      .then((response) => {
         assert.ok(response.body, "Body does not contain json");
         assert.equal(
           response.body.message,
@@ -37,6 +42,20 @@ describe("server", () => {
           'Message should be "Hello json"'
         );
       });
+  });
+  // 6.5
+  it("should load the dotenv config", async () => {
+    const serverFilePath = path.join(__dirname, "..", "..", "src", "server.js");
+    const serverFile = await readFile(serverFilePath, "utf8");
+    const lines = serverFile.split("/n");
+    const firstLines = lines.slice(0, 5);
+    let match = false;
+    for (const line of firstLines) {
+      if (line.match(/require.+dotenv.+\.config()/)) {
+        match = true;
+      }
+    }
+    assert.ok(match, "should load dotenv config at the top of the file");
   });
   after(() => {
     server.close();
