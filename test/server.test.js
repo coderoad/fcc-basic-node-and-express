@@ -83,6 +83,24 @@ describe("server", () => {
     const result = spy.calledWith("GET /json - ::ffff:127.0.0.1");
     assert.ok(result);
   });
+  // 8.1
+  it('should return json `{ time: timestamp }` from the "/now" endpoint', () => {
+    return request(server)
+      .get("/now")
+      .expect("Content-type", /application\/json/)
+      .expect(200)
+      .then(response => {
+        assert.ok(response.body, "Body does not contain json");
+        // TODO: validate uses middleware
+        const now = +new Date();
+        const sendTime = +new Date(response.body.time);
+        const withinRange = now - sendTime < 3000;
+        assert.ok(
+          withinRange,
+          `Timestamp ${response.body.time} is not within range of 3 seconds`
+        );
+      });
+  });
   after(() => {
     server.close();
   });
