@@ -101,6 +101,34 @@ describe("server", () => {
         );
       });
   });
+  // 9.1
+  it('should return `{ word: "hello" }` from GET requests to "/echo/hello"', () => {
+    return request(server)
+      .get("/echo/hello")
+      .expect("Content-type", /application\/json/)
+      .expect(200)
+      .then(response => {
+        assert.ok(response.body, "Body does not contain json");
+        assert.equal(response.body.echo, "hello");
+      });
+  });
+  it('should return `{ word: "ANYWORD" }` from GET requests to "/echo/ANYWORD"', () => {
+    const randomWord =
+      Math.random()
+        .toString(36)
+        .substring(2, 15) +
+      Math.random()
+        .toString(36)
+        .substring(2, 15);
+    return request(server)
+      .get(`/echo/${randomWord}`)
+      .expect("Content-type", /application\/json/)
+      .expect(200)
+      .then(response => {
+        assert.ok(response.body, "Body does not contain json");
+        assert.equal(response.body.echo, randomWord);
+      });
+  });
   after(() => {
     server.close();
   });
