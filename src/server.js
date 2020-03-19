@@ -25,6 +25,17 @@ app.get("/json", (req, res) => {
   res.json({ message });
 });
 
+app.get(
+  "/now",
+  (req, res, next) => {
+    req.time = new Date().toString();
+    next();
+  },
+  (req, res) => {
+    res.json({ time: req.time });
+  }
+);
+
 const server = app.listen(process.env.PORT || 3000);
 
 // -- DO NOT EDIT BELOW THIS LINE
