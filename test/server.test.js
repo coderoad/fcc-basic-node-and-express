@@ -129,6 +129,17 @@ describe("server", () => {
         assert.equal(response.body.echo, randomWord);
       });
   });
+  // 10.1
+  it('should return `{ name: "FIRSTNAME LASTNAME" }` from GET requests to "/name?first=FIRSTNAME&last=LASTNAME"', () => {
+    return request(server)
+      .get("/name?first=FIRSTNAME&last=LASTNAME")
+      .expect("Content-type", /application\/json/)
+      .expect(200)
+      .then(response => {
+        assert.ok(response.body, "Body does not contain json");
+        assert.equal(response.body.name, "FIRSTNAME LASTNAME");
+      });
+  });
   after(() => {
     server.close();
   });
