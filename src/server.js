@@ -41,6 +41,11 @@ app.get("/echo/:word", (req, res) => {
   res.json({ echo: word });
 });
 
+app.get("/name", (req, res) => {
+  const { query } = req;
+  res.json({ name: `${query.first} ${query.last}` });
+});
+
 const server = app.listen(process.env.PORT || 3000);
 
 // -- DO NOT EDIT BELOW THIS LINE
