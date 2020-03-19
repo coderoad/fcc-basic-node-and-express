@@ -36,6 +36,11 @@ app.get(
   }
 );
 
+app.get("/echo/:word", (req, res) => {
+  const { word } = req.params;
+  res.json({ echo: word });
+});
+
 const server = app.listen(process.env.PORT || 3000);
 
 // -- DO NOT EDIT BELOW THIS LINE
