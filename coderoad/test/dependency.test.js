@@ -25,4 +25,15 @@ describe("package.json", () => {
       )
     );
   });
+  // 11.1
+  it('should have "body-parser" installed', async () => {
+    assert.ok(
+      await doesNotThrow(() =>
+        isModuleInstalled({
+          name: "body-parser",
+          type: "dependency"
+        })
+      )
+    );
+  });
 });
