@@ -140,6 +140,16 @@ describe("server", () => {
         assert.equal(response.body.name, "FIRSTNAME LASTNAME");
       });
   });
+  // 11.2
+  it('should enable bodyParser middleware with "extended" set to false', async () => {
+    const serverFilePath = path.join(process.cwd(), "src", "server.js");
+    const serverFile = await readFile(serverFilePath, "utf8");
+    const bodyParserRegex = /app.use\((\s+)?bodyParser.urlencoded\({(\s+)?extended: false(\s+)?}\)(\s+)?\);/;
+    assert.ok(
+      serverFile.match(bodyParserRegex),
+      "bodyParser middleware not found"
+    );
+  });
   after(() => {
     server.close();
   });
