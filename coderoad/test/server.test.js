@@ -94,7 +94,7 @@ describe("server", () => {
       .get("/now")
       .expect("Content-type", /application\/json/)
       .expect(200)
-      .then(response => {
+      .then((response) => {
         assert.ok(response.body, "Body does not contain json");
         // TODO: validate uses middleware
         const now = +new Date();
@@ -112,24 +112,20 @@ describe("server", () => {
       .get("/echo/hello")
       .expect("Content-type", /application\/json/)
       .expect(200)
-      .then(response => {
+      .then((response) => {
         assert.ok(response.body, "Body does not contain json");
         assert.equal(response.body.echo, "hello");
       });
   });
   it('should return `{ word: "ANYWORD" }` from GET requests to "/echo/ANYWORD"', () => {
     const randomWord =
-      Math.random()
-        .toString(36)
-        .substring(2, 15) +
-      Math.random()
-        .toString(36)
-        .substring(2, 15);
+      Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15);
     return request(server)
       .get(`/echo/${randomWord}`)
       .expect("Content-type", /application\/json/)
       .expect(200)
-      .then(response => {
+      .then((response) => {
         assert.ok(response.body, "Body does not contain json");
         assert.equal(response.body.echo, randomWord);
       });
@@ -140,10 +136,20 @@ describe("server", () => {
       .get("/name?first=FIRSTNAME&last=LASTNAME")
       .expect("Content-type", /application\/json/)
       .expect(200)
-      .then(response => {
+      .then((response) => {
         assert.ok(response.body, "Body does not contain json");
         assert.equal(response.body.name, "FIRSTNAME LASTNAME");
       });
+  });
+  // 11.2
+  it('should enable bodyParser middleware with "extended" set to false', async () => {
+    const serverFilePath = path.join(__dirname, "..", "..", "src", "server.js");
+    const serverFile = await readFile(serverFilePath, "utf8");
+    const bodyParserRegex = /app.use\((\s+)?bodyParser.urlencoded\({(\s+)?extended: false(\s+)?}\)(\s+)?\);/;
+    assert.ok(
+      serverFile.match(bodyParserRegex),
+      "bodyParser middleware not found"
+    );
   });
   after(() => {
     sandbox.restore();
