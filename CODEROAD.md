@@ -12,8 +12,11 @@ config:
       - .env
       - .gitignore
   repo: 
-    uri: https://github.com/shmck/coderoad-fcc-basic-node-and-express
-    branch: v0.2.0
+    uri: https://github.com/coderoad/fcc-basic-node-and-express
+    branch: v0.3.0
+  dependencies:
+    - name: node
+      version: >0.10
 ```
 
 ## Meet the Node Console
@@ -48,8 +51,8 @@ setup:
   files:
     - package.json
   commits:
-    - 'c722f9e'
-    - '9e28073'
+    - 'a974aea'
+    - 'bee383e'
   watchers:
     - package.json
     - node_modules/express
@@ -59,7 +62,7 @@ solution:
   files:
     - package.json
   commits:
-    - 'ddd0820'
+    - '63e304f'
   commands:
     - npm install
 ```
@@ -73,14 +76,14 @@ setup:
   files:
     - src/server.js
   commits:
-    - 'cc58e3b'
+    - 'd9bf5f3'
   commands:
     - npm install
 solution:
   files:
     - src/server.js
   commits:
-    - '3bfc55c'
+    - 'ad7af42'
 ```
 
 Modify the `server.js` file to log "Hello World" to the console.
@@ -110,14 +113,14 @@ setup:
   files:
     - src/server.js
   commits:
-    - 'a0e3b03'
+    - '7462d28'
   commands:
     - npm install
 solution:
   files:
     - src/server.js
   commits:
-    - 'e28b824'
+    - '331bdfc'
 ```
 
 Use the `app.get()` method to serve the string "Hello Express" to GET requests matching the `/` (root) path.
@@ -141,12 +144,12 @@ setup:
   files:
     - src/views/index.html
   commits:
-    - 'fdd75dc20aa74f37e9f2ece83dce578c48a430bc'
+    - 'd806cc5'
 solution:
   files:
     - src/server.js
   commits:
-    - 'ec492d67803067158e810e00e817b20d14cc39b6'
+    - '1b04cf8'
 ```
 
 Send the `/views/index.html` file as a response to GET requests to the `/` path. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.
@@ -166,12 +169,12 @@ setup:
   files:
     - src/public/style.css
   commits:
-    - '6bfd618b3a7163a34dc7e9547791a36a57d39aa7'
+    - 'c2c1b90'
 solution:
   files:
     - src/server.js
   commits:
-    - 'fb0fe43203089709173372fa39eeb473eae09e80'
+    - 'bf27ac1'
 ```
 
 Mount the `express.static()` middleware for all requests with `app.use()`. The absolute path to the assets folder is `\_\_dirname + /public`.
@@ -192,12 +195,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - '78962a4195d663a06946ea0b1ec62c10fb8ea71b'
+    - 'ead9fcb'
 solution:
   files:
     - src/server.js
   commits:
-    - 'b16b05d1c408798fb094d40ad196973f436e983f'
+    - '31fd254'
 ```
 
 Serve the object `{"message": "Hello json"}` as a response, in JSON format, to GET requests to the `/json` route. Then point your browser to `your-app-url/json`, you should see the message on the screen.
@@ -215,14 +218,14 @@ The environment variables are accessible from the app as `process.env.VAR_NAME`.
 ```config
 setup:
   commits:
-    - '8f4234fce7c540b052ea210191a2a2c6a49b1cca'
+    - 'da2dfbc'
   watchers:
     - .env
 solution:
   files:
     - .env
   commits:
-    - 'f06ecb4f0ad67bdd6be5a09a36dc7a3b921de182'
+    - '3037600'
 ```
 
 Create a .env file in the root of your project.
@@ -234,12 +237,12 @@ setup:
   files:
     - .gitignore
   commits:
-    - 'a3577e7b25f8a2d72a271092362f1b7a0582f243'
+    - '66a5a9e'
 solution:
   files:
     - .gitignore
   commits:
-    - '323233af8c62f5233d8ccdd6b2e760e211957c6f'
+    - 'b21bbf7'
 ```
 
 Add the .env file to your .gitignore file. It should be kept a secret.
@@ -251,12 +254,12 @@ setup:
   files:
     - .env
   commits:
-    - 'fabd307b8a77bf3a965dba8f96e7c91112627257'
+    - 'b5a291a'
 solution:
   files:
     - .env
   commits:
-    - 'aa0fe163477d8459c187e69f4444a3aa75ea6723'
+    - '508520c'
 ```
 
 Let's add an environment variable as a configuration option.
@@ -269,7 +272,7 @@ setup:
   files:
     - package.json
   commits:
-    - '906a86d8af50b2d4d2e73442e5aeb2f3b9761532'
+    - '45eafdc'
   watchers:
     - package.json
     - node_modules/dotenv
@@ -277,7 +280,7 @@ solution:
   files:
     - package.json
   commits:
-    - 'fe9f2d0fd6d3e58a7652b599d0cf477894998481'
+    - 'd400723'
   commands:
     - npm install
 ```
@@ -291,12 +294,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - 'd5440e5cf711625e859d14ebe851e7bbceff8c0d'
+    - 'a1f1713'
 solution:
   files:
     - src/server.js
   commits:
-    - '75d6643eb1f20049f77077ea96806c99989e2d72'
+    - '44e6c3a'
 ```
 
 Load dependencies into your server.js by adding the following line to the top of your file:
@@ -314,12 +317,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - '7cee81b2c2c847718d2b2a123efbe106c84a3ad9'
+    - '40fd774'
 solution:
   files:
     - src/server.js
   commits:
-    - 'ebfd74be1a47a4348d9acfdcc6d345ab257d572e'
+    - 'f5340dc'
 ```
 
 Tell the GET `/json` route handler that you created in the last challenge to transform the response object’s message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should become `{"message": "HELLO JSON"}`.
@@ -350,12 +353,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - 'e400e1df828926321eb375686e6b5c388342119b'
+    - 'b18fa07'
 solution:
   files:
     - src/server.js
   commits:
-    - '458f2d51fd7b77be921a197ef2ec5589bbf4e282'
+    - '9ba7d21'
 ```
 
 Build a simple logger. For every request, it should log to the console a string taking the following format: `method path - ip`. An example would look like this: `GET /json - ::ffff:127.0.0.1`. Note that there is a space between `method` and `path` and that the dash separating `path` and `ip` is surrounded by a space on both sides. You can get the request method (http verb), the relative route path, and the caller’s ip from the request object using `req.method`, `req.path` and `req.ip`. Remember to call `next()` when you are done, or your server will be stuck forever. Be sure to have the ‘Logs’ opened, and see what happens when some request arrives.
@@ -391,12 +394,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - '6adeb38dc7c4349ee3138be6bef78f7a7b562874'
+    - 'b3c244e'
 solution:
   files:
     - src/server.js
   commits:
-    - 'ee9205ea772e60bbce0671a9bd6855e7b2d3357f'
+    - '5b12fa5'
 ```
 
 In the route `app.get('/now', ...)` chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the `req.time` key. You can use `new Date().toString()`. In the handler, respond with a JSON object, taking the structure `{time: req.time}`.
@@ -417,12 +420,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - 'ab47c91e36779a9132e0cddc88166aa58b44062b'
+    - 'fd4a291'
 solution:
   files:
     - src/server.js
   commits:
-    - 'c53edaa512157c7791b01f8e9aca9de719545451'
+    - '6d1db55'
 ```
 
 Build an echo server, mounted at the route `GET /echo/:word`. Respond with a JSON object, taking the structure `{echo: word}`. You can find the word to be repeated at `req.params.word`.
@@ -442,12 +445,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - '2111dd1cd4111f113ba3b8071ab80de42ade8844'
+    - '1881c49'
 solution:
   files:
     - src/server.js
   commits:
-    - '0ed8dd9050558854a90ae10ccd0096a7f1741b76'
+    - 'd12bd73'
 ```
 
 Build an API endpoint, mounted at `GET /name`. Respond with a JSON document, taking the structure `{ name: 'firstname lastname'}`. The first and last name parameters should be encoded in a query string e.g. `?first=firstname&last=lastname`.
@@ -480,7 +483,7 @@ setup:
   files:
     - package.json
   commits:
-    - '343c6b6d0cea18b5439fee7ca3babebe91d74ccb'
+    - 'e510f57'
   watchers:
     - package.json
     - node_modules/body-parser
@@ -488,7 +491,7 @@ solution:
   files:
     - package.json
   commits:
-    - '0835a39f5f5fd38b690ad9c8d1ae6243b3b4dd7c'
+    - 'a38dc38'
   commands:
     - npm install
 ```
@@ -502,12 +505,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - 'b5d65b56bf232ec09c6101b9e868213fb157a32a'
+    - '4249499'
 solution:
   files:
     - src/server.js
   commits:
-    - '2c3c3815e5352f3a94716d5023af93f1b49fa5cd'
+    - '2a74c71'
 ```
 
 Require "body-parser" at the top of the server.js file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: false})`. Pass to `app.use()` the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it.
