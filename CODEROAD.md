@@ -16,7 +16,7 @@ config:
     branch: v0.3.0
   dependencies:
     - name: node
-      version: >0.10
+      version: >10
 ```
 
 ## Meet the Node Console
