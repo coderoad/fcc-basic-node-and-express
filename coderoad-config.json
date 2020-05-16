@@ -307,7 +307,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "a1f1713"
+                "7652103"
               ]
             },
             "solution": {
@@ -315,7 +315,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "44e6c3a"
+                "f11096f"
               ]
             },
             "content": "Load dependencies into your server.js by adding the following line to the top of your file:\n\n```js\nrequire(\"dotenv\").config();\n```\n\nYou can test if it works by logging `process.env.MESSAGE_STYLE`.\n"
@@ -327,7 +327,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "40fd774"
+                "b0e51ce"
               ]
             },
             "solution": {
@@ -335,7 +335,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "f5340dc"
+                "7329e59"
               ]
             },
             "content": "Tell the GET `/json` route handler that you created in the last challenge to transform the response object’s message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should become `{\"message\": \"HELLO JSON\"}`.\n"
@@ -356,7 +356,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "b18fa07"
+                "a2ec56b"
               ]
             },
             "solution": {
@@ -364,7 +364,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "9ba7d21"
+                "3544207"
               ]
             },
             "content": "Build a simple logger. For every request, it should log to the console a string taking the following format: `method path - ip`. An example would look like this: `GET /json - ::ffff:127.0.0.1`. Note that there is a space between `method` and `path` and that the dash separating `path` and `ip` is surrounded by a space on both sides. You can get the request method (http verb), the relative route path, and the caller’s ip from the request object using `req.method`, `req.path` and `req.ip`. Remember to call `next()` when you are done, or your server will be stuck forever. Be sure to have the ‘Logs’ opened, and see what happens when some request arrives.\n\n**Note:** Express evaluates functions in the order they appear in the code. This is true for middleware too. If you want it to work for all the routes, it should be mounted before them.\n"
@@ -385,7 +385,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "b3c244e"
+                "413957f"
               ]
             },
             "solution": {
@@ -393,7 +393,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "5b12fa5"
+                "ed11423"
               ]
             },
             "content": "In the route `app.get('/now', ...)` chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the `req.time` key. You can use `new Date().toString()`. In the handler, respond with a JSON object, taking the structure `{time: req.time}`.\n**Note:** The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct.\n"
@@ -414,7 +414,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "fd4a291"
+                "d586416"
               ]
             },
             "solution": {
@@ -422,7 +422,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "6d1db55"
+                "761db27"
               ]
             },
             "content": "Build an echo server, mounted at the route `GET /echo/:word`. Respond with a JSON object, taking the structure `{echo: word}`. You can find the word to be repeated at `req.params.word`.\n"
@@ -443,7 +443,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "1881c49"
+                "31c6a99"
               ]
             },
             "solution": {
@@ -451,7 +451,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "d12bd73"
+                "7310d93"
               ]
             },
             "content": "Build an API endpoint, mounted at `GET /name`. Respond with a JSON document, taking the structure `{ name: 'firstname lastname'}`. The first and last name parameters should be encoded in a query string e.g. `?first=firstname&last=lastname`.\n\n**Note:** In the following exercise you are going to receive data from a POST request, at the same `/name` route path. If you want, you can use the method `app.route(path).get(handler).post(handler)`. This syntax allows you to chain different verb handlers on the same path route. You can save a bit of typing, and have cleaner code.\n"
@@ -472,7 +472,7 @@
                 "package.json"
               ],
               "commits": [
-                "e510f57"
+                "cbec067"
               ],
               "watchers": [
                 "package.json",
@@ -484,7 +484,7 @@
                 "package.json"
               ],
               "commits": [
-                "a38dc38"
+                "db3ea18"
               ],
               "commands": [
                 "npm install"
@@ -499,7 +499,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "4249499"
+                "d87f1b2"
               ]
             },
             "solution": {
@@ -507,7 +507,7 @@
                 "src/server.js"
               ],
               "commits": [
-                "2a74c71"
+                "818aab2"
               ]
             },
             "content": "Require \"body-parser\" at the top of the server.js file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: false})`. Pass to `app.use()` the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it.\n\n**Note:** `extended=false` is a configuration option that tells the parser to use the classic encoding. When using it, values can be only strings or arrays. The extended version allows more data flexibility, but it is outmatched by JSON."

@@ -11,9 +11,9 @@ config:
       - JSON
       - .env
       - .gitignore
-  repo: 
+  repo:
     uri: https://github.com/coderoad/fcc-basic-node-and-express
-    branch: v0.3.0
+    branch: v0.3.1
   dependencies:
     - name: node
       version: >=10
@@ -285,12 +285,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - 'a1f1713'
+    - '7652103'
 solution:
   files:
     - src/server.js
   commits:
-    - '44e6c3a'
+    - 'f11096f'
 ```
 
 Load dependencies into your server.js by adding the following line to the top of your file:
@@ -308,12 +308,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - '40fd774'
+    - 'b0e51ce'
 solution:
   files:
     - src/server.js
   commits:
-    - 'f5340dc'
+    - '7329e59'
 ```
 
 Tell the GET `/json` route handler that you created in the last challenge to transform the response object’s message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should become `{"message": "HELLO JSON"}`.
@@ -344,12 +344,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - 'b18fa07'
+    - 'a2ec56b'
 solution:
   files:
     - src/server.js
   commits:
-    - '9ba7d21'
+    - '3544207'
 ```
 
 Build a simple logger. For every request, it should log to the console a string taking the following format: `method path - ip`. An example would look like this: `GET /json - ::ffff:127.0.0.1`. Note that there is a space between `method` and `path` and that the dash separating `path` and `ip` is surrounded by a space on both sides. You can get the request method (http verb), the relative route path, and the caller’s ip from the request object using `req.method`, `req.path` and `req.ip`. Remember to call `next()` when you are done, or your server will be stuck forever. Be sure to have the ‘Logs’ opened, and see what happens when some request arrives.
@@ -385,12 +385,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - 'b3c244e'
+    - '413957f'
 solution:
   files:
     - src/server.js
   commits:
-    - '5b12fa5'
+    - 'ed11423'
 ```
 
 In the route `app.get('/now', ...)` chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the `req.time` key. You can use `new Date().toString()`. In the handler, respond with a JSON object, taking the structure `{time: req.time}`.
@@ -411,12 +411,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - 'fd4a291'
+    - 'd586416'
 solution:
   files:
     - src/server.js
   commits:
-    - '6d1db55'
+    - '761db27'
 ```
 
 Build an echo server, mounted at the route `GET /echo/:word`. Respond with a JSON object, taking the structure `{echo: word}`. You can find the word to be repeated at `req.params.word`.
@@ -436,12 +436,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - '1881c49'
+    - '31c6a99'
 solution:
   files:
     - src/server.js
   commits:
-    - 'd12bd73'
+    - '7310d93'
 ```
 
 Build an API endpoint, mounted at `GET /name`. Respond with a JSON document, taking the structure `{ name: 'firstname lastname'}`. The first and last name parameters should be encoded in a query string e.g. `?first=firstname&last=lastname`.
@@ -474,7 +474,7 @@ setup:
   files:
     - package.json
   commits:
-    - 'e510f57'
+    - 'cbec067'
   watchers:
     - package.json
     - node_modules/body-parser
@@ -482,7 +482,7 @@ solution:
   files:
     - package.json
   commits:
-    - 'a38dc38'
+    - 'db3ea18'
   commands:
     - npm install
 ```
@@ -496,12 +496,12 @@ setup:
   files:
     - src/server.js
   commits:
-    - '4249499'
+    - 'd87f1b2'
 solution:
   files:
     - src/server.js
   commits:
-    - '2a74c71'
+    - '818aab2'
 ```
 
 Require "body-parser" at the top of the server.js file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: false})`. Pass to `app.use()` the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it.
