@@ -4,13 +4,11 @@
 
 ```config
 config:
-  testRunner:
-    command: npm run programmatic-test
-    fileFormats:
-      - JS
-      - JSON
-      - .env
-      - .gitignore
+   testRunner:
+    command: ./node_modules/.bin/mocha
+    args:
+      filter: --grep
+      tap: --reporter=mocha-tap-reporter
   repo:
     uri: https://github.com/coderoad/fcc-basic-node-and-express
     branch: v0.3.1

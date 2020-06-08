@@ -6,13 +6,11 @@
     },
     "config": {
       "testRunner": {
-        "command": "npm run programmatic-test",
-        "fileFormats": [
-          "JS",
-          "JSON",
-          ".env",
-          ".gitignore"
-        ]
+        "command": "./node_modules/.bin/mocha",
+        "args": {
+          "filter": "--grep",
+          "tap": "--reporter=mocha-tap-reporter"
+        }
       },
       "repo": {
         "uri": "https://github.com/coderoad/fcc-basic-node-and-express",
