@@ -1,0 +1,187 @@
+version: "0.4.0"
+config:
+  testRunner:
+    command: ./node_modules/.bin/mocha
+    args:
+      filter: --grep
+      tap: --reporter=mocha-tap-reporter
+    setup:
+      commands:
+        - npm install
+    directory: coderoad
+  repo:
+    uri: https://github.com/coderoad/fcc-learn-npm
+    branch: v0.4.0
+  dependencies:
+    - name: node
+      version: '>=10'
+levels:
+  - id: L1
+    steps:
+      - id: L1S1
+        setup:
+          commands:
+            - npm install
+          files:
+            - package.json
+          watchers:
+            - package.json
+            - node_modules/express
+        solution:
+          files:
+            - package.json
+          commands:
+            - npm install
+      - id: L1S2
+        setup:
+          files:
+            - src/server.js
+          commands:
+            - npm install
+        solution:
+          files:
+            - src/server.js
+  - id: L2
+    steps:
+      - id: L2S1
+        setup:
+          files:
+            - src/server.js
+          commands:
+            - npm install
+        solution:
+          files:
+            - src/server.js
+  - id: L3
+    steps:
+      - id: L3S1
+        setup:
+          files:
+            - src/views/index.html
+        solution:
+          files:
+            - src/server.js
+  - id: L4
+    steps:
+      - id: L4S1
+        setup:
+          files:
+            - src/public/style.css
+        solution:
+          files:
+            - src/server.js
+  - id: L5
+    steps:
+      - id: L5S1
+        setup:
+          files:
+            - src/server.js
+        solution:
+          files:
+            - src/server.js
+  - id: L6
+    steps:
+      - id: L6S1
+        setup:
+          watchers:
+            - .env
+        solution:
+          files:
+            - .env
+      - id: L6S2
+        setup:
+          files:
+            - .env
+        solution:
+          files:
+            - .env
+      - id: L6S3
+        setup:
+          files:
+            - .gitignore
+        solution:
+          files:
+            - .gitignore
+      - id: L6S4
+        setup:
+          files:
+            - package.json
+          watchers:
+            - package.json
+            - node_modules/dotenv
+        solution:
+          files:
+            - package.json
+          commands:
+            - npm install
+      - id: L6S5
+        setup:
+          files:
+            - src/server.js
+        solution:
+          files:
+            - src/server.js
+      - id: L6S6
+        setup:
+          files:
+            - src/server.js
+        solution:
+          files:
+            - src/server.js
+  - id: L7
+    steps:
+      - id: L7S1
+        setup:
+          files:
+            - src/server.js
+        solution:
+          files:
+            - src/server.js
+  - id: L8
+    steps:
+      - id: L8S1
+        setup:
+          files:
+            - src/server.js
+        solution:
+          files:
+            - src/server.js
+  - id: L9
+    steps:
+      - id: L9S1
+        setup:
+          files:
+            - src/server.js
+        solution:
+          files:
+            - src/server.js
+  - id: L10
+    steps:
+      - id: L8S1
+        setup:
+          files:
+            - src/server.js
+        solution:
+          files:
+            - src/server.js
+  - id: L11
+    steps:
+      - id: L8S1
+        setup:
+          files:
+            - package.json
+          watchers:
+            - package.json
+            - node_modules/body-parser
+        solution:
+          files:
+            - package.json
+          commands:
+            - npm install
+      - id: L8S2
+        setup:
+          files:
+            - src/server.js
+        solution:
+          files:
+            - src/server.js

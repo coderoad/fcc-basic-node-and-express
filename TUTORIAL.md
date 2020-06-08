@@ -1,21 +1,6 @@
 # Basic Node & Express
 
-> Build a server with Node & Express
-
-```config
-config:
-   testRunner:
-    command: ./node_modules/.bin/mocha
-    args:
-      filter: --grep
-      tap: --reporter=mocha-tap-reporter
-  repo:
-    uri: https://github.com/coderoad/fcc-basic-node-and-express
-    branch: v0.3.1
-  dependencies:
-    - name: node
-      version: >=10
-```
+Build a server with Node & Express
 
 ## Meet the Node Console
 
@@ -35,45 +20,9 @@ We recommend to keep the log panel open while working at these challenges. By re
 
 ### Step 1.1
 
-```config
-setup:
-  files:
-    - package.json
-  commits:
-    - 'a974aea'
-    - 'bee383e'
-  watchers:
-    - package.json
-    - node_modules/express
-  commands:
-    - npm install
-solution:
-  files:
-    - package.json
-  commits:
-    - '63e304f'
-  commands:
-    - npm install
-```
-
 NPM install the "express" library module version. Use version 4.x.
 
 ### Step 1.2
-
-```config
-setup:
-  files:
-    - src/server.js
-  commits:
-    - 'd9bf5f3'
-  commands:
-    - npm install
-solution:
-  files:
-    - src/server.js
-  commits:
-    - 'ad7af42'
-```
 
 Modify the `server.js` file to log "Hello World" to the console.
 
@@ -97,21 +46,6 @@ will serve the string 'Response String'.
 
 ### Step 2.1
 
-```config
-setup:
-  files:
-    - src/server.js
-  commits:
-    - '7462d28'
-  commands:
-    - npm install
-solution:
-  files:
-    - src/server.js
-  commits:
-    - '331bdfc'
-```
-
 Use the `app.get()` method to serve the string "Hello Express" to GET requests matching the `/` (root) path.
 
 **Note:** Be sure that your code works by looking at the logs, then see the results in your browser by running `npm start`.
@@ -128,19 +62,6 @@ absolutePath = __dirname + relativePath / file.ext;
 
 ### Step 3.1
 
-```config
-setup:
-  files:
-    - src/views/index.html
-  commits:
-    - 'd806cc5'
-solution:
-  files:
-    - src/server.js
-  commits:
-    - '1b04cf8'
-```
-
 Send the `/views/index.html` file as a response to GET requests to the `/` path. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.
 
 **Note:** You can edit the solution of the previous challenge or create a new one. If you create a new solution, keep in mind that Express evaluates routes from top to bottom, and executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string.
@@ -152,19 +73,6 @@ Send the `/views/index.html` file as a response to GET requests to the `/` path.
 An HTML server usually has one or more directories that are accessible by the user. You can place there the static assets needed by your application (stylesheets, scripts, images). In Express, you can put in place this functionality using the middleware `express.static(path)`, where the `path` parameter is the absolute path of the folder containing the assets. If you don’t know what middleware is... don’t worry, we will discuss in detail later. Basically, middleware are functions that intercept route handlers, adding some kind of information. A middleware needs to be mounted using the method `app.use(path, middlewareFunction)`. The first `path` argument is optional. If you don’t pass it, the middleware will be executed for all requests.
 
 ### Step 4.1
-
-```config
-setup:
-  files:
-    - src/public/style.css
-  commits:
-    - 'c2c1b90'
-solution:
-  files:
-    - src/server.js
-  commits:
-    - 'bf27ac1'
-```
 
 Mount the `express.static()` middleware for all requests with `app.use()`. The absolute path to the assets folder is `\_\_dirname + /public`.
 Now your app should be able to serve a CSS stylesheet. From outside, the public folder will appear mounted to the root directory. Your front-page should look a little better now!
@@ -179,19 +87,6 @@ Let's create a simple API by creating a route that responds with JSON at the pat
 
 ### Step 1
 
-```config
-setup:
-  files:
-    - src/server.js
-  commits:
-    - 'ead9fcb'
-solution:
-  files:
-    - src/server.js
-  commits:
-    - '31fd254'
-```
-
 Serve the object `{"message": "Hello json"}` as a response, in JSON format, to GET requests to the `/json` route. Then point your browser to `your-app-url/json`, you should see the message on the screen.
 
 ## Use the .env File
@@ -204,92 +99,22 @@ The environment variables are accessible from the app as `process.env.VAR_NAME`.
 
 ### Step 6.1
 
-```config
-setup:
-  commits:
-    - 'da2dfbc'
-  watchers:
-    - .env
-solution:
-  files:
-    - .env
-  commits:
-    - '3037600'
-```
-
 Create a .env file in the root of your project.
 
 ### Step 6.2
 
-```config
-setup:
-  files:
-    - .gitignore
-  commits:
-    - '66a5a9e'
-solution:
-  files:
-    - .gitignore
-  commits:
-    - 'b21bbf7'
-```
-
 Add the .env file to your .gitignore file. It should be kept a secret.
 
 ### Step 6.3
-
-```config
-setup:
-  files:
-    - .env
-  commits:
-    - 'b5a291a'
-solution:
-  files:
-    - .env
-  commits:
-    - '508520c'
-```
 
 Let's add an environment variable as a configuration option.
 Store the variable `MESSAGE_STYLE=uppercase` in the `.env` file.
 
 ### Step 6.4
 
-```config
-setup:
-  files:
-    - package.json
-  commits:
-    - '45eafdc'
-  watchers:
-    - package.json
-    - node_modules/dotenv
-solution:
-  files:
-    - package.json
-  commits:
-    - 'd400723'
-  commands:
-    - npm install
-```
-
 Install the dependency for the package "dotenv" as a devDependency (`npm install --save-dev module`). The package helps make variables from the .env file available in your code.
 
 ### Step 6.5
-
-```config
-setup:
-  files:
-    - src/server.js
-  commits:
-    - '7652103'
-solution:
-  files:
-    - src/server.js
-  commits:
-    - 'f11096f'
-```
 
 Load dependencies into your server.js by adding the following line to the top of your file:
 
@@ -300,19 +125,6 @@ require("dotenv").config();
 You can test if it works by logging `process.env.MESSAGE_STYLE`.
 
 ### Step 6.6
-
-```config
-setup:
-  files:
-    - src/server.js
-  commits:
-    - 'b0e51ce'
-solution:
-  files:
-    - src/server.js
-  commits:
-    - '7329e59'
-```
 
 Tell the GET `/json` route handler that you created in the last challenge to transform the response object’s message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should become `{"message": "HELLO JSON"}`.
 
@@ -336,19 +148,6 @@ Let’s suppose you mounted this function on a route. When a request matches the
 In this exercise, you are going to build root-level middleware. As you have seen in challenge 4, to mount a middleware function at root level, you can use the `app.use(&lt;mware-function&gt;)` method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use `app.post(&lt;mware-function&gt;)`. Analogous methods exist for all the HTTP verbs (GET, DELETE, PUT, …).
 
 ### Step 7.1
-
-```config
-setup:
-  files:
-    - src/server.js
-  commits:
-    - 'a2ec56b'
-solution:
-  files:
-    - src/server.js
-  commits:
-    - '3544207'
-```
 
 Build a simple logger. For every request, it should log to the console a string taking the following format: `method path - ip`. An example would look like this: `GET /json - ::ffff:127.0.0.1`. Note that there is a space between `method` and `path` and that the dash separating `path` and `ip` is surrounded by a space on both sides. You can get the request method (http verb), the relative route path, and the caller’s ip from the request object using `req.method`, `req.path` and `req.ip`. Remember to call `next()` when you are done, or your server will be stuck forever. Be sure to have the ‘Logs’ opened, and see what happens when some request arrives.
 
@@ -378,19 +177,6 @@ This approach is useful to split the server operations into smaller units. That 
 
 ### Step 8.1
 
-```config
-setup:
-  files:
-    - src/server.js
-  commits:
-    - '413957f'
-solution:
-  files:
-    - src/server.js
-  commits:
-    - 'ed11423'
-```
-
 In the route `app.get('/now', ...)` chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the `req.time` key. You can use `new Date().toString()`. In the handler, respond with a JSON object, taking the structure `{time: req.time}`.
 **Note:** The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct.
 
@@ -404,19 +190,6 @@ When building an API, we have to allow users to communicate to us what they want
 
 ### Step 9.1
 
-```config
-setup:
-  files:
-    - src/server.js
-  commits:
-    - 'd586416'
-solution:
-  files:
-    - src/server.js
-  commits:
-    - '761db27'
-```
-
 Build an echo server, mounted at the route `GET /echo/:word`. Respond with a JSON object, taking the structure `{echo: word}`. You can find the word to be repeated at `req.params.word`.
 
 ## Get Query Parameter Input from the Client
@@ -428,19 +201,6 @@ Another common way to get input from the client is by encoding the data after th
 <blockquote>route_path: '/library'<br>actual_request_URL: '/library?userId=546&bookId=6754' <br>req.query: {userId: '546', bookId: '6754'}</blockquote>
 
 ### Step 10.1
-
-```config
-setup:
-  files:
-    - src/server.js
-  commits:
-    - '31c6a99'
-solution:
-  files:
-    - src/server.js
-  commits:
-    - '7310d93'
-```
 
 Build an API endpoint, mounted at `GET /name`. Respond with a JSON document, taking the structure `{ name: 'firstname lastname'}`. The first and last name parameters should be encoded in a query string e.g. `?first=firstname&last=lastname`.
 
@@ -467,40 +227,9 @@ In this exercise, you will use a urlencoded body. To parse the data coming from 
 
 ### Step 11.1
 
-```config
-setup:
-  files:
-    - package.json
-  commits:
-    - 'cbec067'
-  watchers:
-    - package.json
-    - node_modules/body-parser
-solution:
-  files:
-    - package.json
-  commits:
-    - 'db3ea18'
-  commands:
-    - npm install
-```
-
 Install the `body-parser` module in your `package.json`.
 
 ### Step 11.2
-
-```config
-setup:
-  files:
-    - src/server.js
-  commits:
-    - 'd87f1b2'
-solution:
-  files:
-    - src/server.js
-  commits:
-    - '818aab2'
-```
 
 Require "body-parser" at the top of the server.js file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: false})`. Pass to `app.use()` the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it.
 
