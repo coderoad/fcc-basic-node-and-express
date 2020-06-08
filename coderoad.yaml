@@ -10,7 +10,7 @@ config:
         - npm install
     directory: coderoad
   repo:
-    uri: https://github.com/coderoad/fcc-learn-npm
+    uri: https://github.com/coderoad/fcc-basic-node-and-express
     branch: v0.4.0
   dependencies:
     - name: node
@@ -157,7 +157,7 @@ levels:
             - src/server.js
   - id: L10
     steps:
-      - id: L8S1
+      - id: L10S1
         setup:
           files:
             - src/server.js
@@ -166,7 +166,7 @@ levels:
             - src/server.js
   - id: L11
     steps:
-      - id: L8S1
+      - id: L11S1
         setup:
           files:
             - package.json
@@ -178,7 +178,7 @@ levels:
             - package.json
           commands:
             - npm install
-      - id: L8S2
+      - id: L11S2
         setup:
           files:
             - src/server.js
