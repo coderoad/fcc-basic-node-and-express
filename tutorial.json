@@ -73,7 +73,7 @@
               "src/server.js"
             ],
             "commands": [
-              "npm install"
+              "cd coderoad && npm install"
             ],
             "commits": [
               "3e2d170a7998b956f1b36a5080d134cc524bc106"
@@ -104,7 +104,7 @@
               "src/server.js"
             ],
             "commands": [
-              "npm install"
+              "cd coderoad && npm install"
             ],
             "commits": [
               "0aa54d19e8db4c35cec6ae9705b6afd45daec9cd"

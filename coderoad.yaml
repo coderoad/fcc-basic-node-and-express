@@ -37,10 +37,11 @@ levels:
           files:
             - src/server.js
           commands:
-            - npm install
+            - cd coderoad && npm install
         solution:
           files:
             - src/server.js
+          
   - id: L2
     steps:
       - id: L2S1
@@ -48,7 +49,7 @@ levels:
           files:
             - src/server.js
           commands:
-            - npm install
+            - cd coderoad && npm install
         solution:
           files:
             - src/server.js
