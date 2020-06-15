@@ -22,6 +22,12 @@ We recommend to keep the log panel open while working at these challenges. By re
 
 NPM install the "express" library module version. Use version 4.x.
 
+#### HINTS
+
+* Install the package using npm
+* Run `npm install <package>`
+* RUn `npm install express`
+
 ### L1S2
 
 Modify the `server.js` file to log "Hello World" to the console.
