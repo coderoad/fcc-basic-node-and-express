@@ -26,7 +26,7 @@ NPM install the "express" library module version. Use version 4.x.
 
 * Install the package using npm
 * Run `npm install <package>`
-* RUn `npm install express`
+* Run `npm install express`
 
 ### L1S2
 

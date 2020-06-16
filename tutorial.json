@@ -68,7 +68,7 @@
           "hints": [
             "Install the package using npm",
             "Run `npm install <package>`",
-            "RUn `npm install express`"
+            "Run `npm install express`"
           ]
         },
         {
