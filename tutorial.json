@@ -67,7 +67,12 @@
               "54805b717f3579ec96d0602a0f652bb0ce847367"
             ]
           },
-          "content": "NPM install the \"express\" library module version. Use version 4.x."
+          "content": "NPM install the \"express\" library module version. Use version 4.x.",
+          "hints": [
+            "Install the package using npm",
+            "Run `npm install <package>`",
+            "Run `npm install express`"
+          ]
         },
         {
           "id": "1.2",
