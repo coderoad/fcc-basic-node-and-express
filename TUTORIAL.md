@@ -32,7 +32,7 @@ NPM install the "express" library module version. Use version 4.x.
 
 Modify the `server.js` file to log "Hello World" to the console.
 
-## 1. Start a Working Server
+## 2. Start a Working Server
 
 > Create a server
 

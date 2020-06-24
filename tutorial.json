@@ -23,7 +23,7 @@
     },
     "repo": {
       "uri": "https://github.com/coderoad/fcc-basic-node-and-express",
-      "branch": "v0.4.0"
+      "branch": "v0.4.1"
     },
     "dependencies": [
       {
@@ -53,7 +53,7 @@
               "node_modules/express"
             ],
             "commits": [
-              "18286aaa317b79a818fabe5dba5bfe090f9de94a"
+              "818a21d1234d6d47cf44346e159a2dfc33bf2b24"
             ]
           },
           "solution": {
@@ -64,7 +64,7 @@
               "npm install"
             ],
             "commits": [
-              "3880e2989e3a32268f1ca5f58ff854754be9f12e"
+              "54805b717f3579ec96d0602a0f652bb0ce847367"
             ]
           },
           "content": "NPM install the \"express\" library module version. Use version 4.x.",
@@ -84,7 +84,7 @@
               "cd coderoad && npm install"
             ],
             "commits": [
-              "b1219dbbaf819df77a1b6721d47e69eb362a7f13"
+              "1907ceb5346fc4cf514f6cbb0f92f51e977fd741"
             ]
           },
           "solution": {
@@ -92,7 +92,7 @@
               "src/server.js"
             ],
             "commits": [
-              "2d49871559a20ea387d1fa0d49ada4e59a162ce8"
+              "0a8de8c1bb5be3eeb6f2585ad02a6c9d6d1635d8"
             ]
           },
           "content": "Modify the `server.js` file to log \"Hello World\" to the console."
@@ -115,7 +115,7 @@
               "cd coderoad && npm install"
             ],
             "commits": [
-              "49ea32980ddfd984a318f8411b3ff08c3749d76a"
+              "5a31c98eee6fe40915cc12ca140dad3697283b46"
             ]
           },
           "solution": {
@@ -123,7 +123,7 @@
               "src/server.js"
             ],
             "commits": [
-              "2dffaa3752c9388ef6bc93f18b03bbdca685145b"
+              "debf7c86c4e9a5fe8e589f43f302b67c71fa7eaf"
             ]
           },
           "content": "Use the `app.get()` method to serve the string \"Hello Express\" to GET requests matching the `/` (root) path.\n\n**Note:** Be sure that your code works by looking at the logs, then see the results in your browser by running `npm start`."
@@ -143,7 +143,7 @@
               "src/views/index.html"
             ],
             "commits": [
-              "b5a36e2cb0aba64026ce8572c5cbf7ec0140fd4b"
+              "32bb02a2f576a888a22f999b65adf38c4da4101c"
             ]
           },
           "solution": {
@@ -151,7 +151,7 @@
               "src/server.js"
             ],
             "commits": [
-              "d35574e9fc84f002d6ec59198dc63965f9f649e8"
+              "9a9425e300b7b0cdd5b15a6841983bc26643feca"
             ]
           },
           "content": "Send the `/views/index.html` file as a response to GET requests to the `/` path. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.\n\n**Note:** You can edit the solution of the previous challenge or create a new one. If you create a new solution, keep in mind that Express evaluates routes from top to bottom, and executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string."
@@ -171,7 +171,7 @@
               "src/public/style.css"
             ],
             "commits": [
-              "1c5438e7d8c7acf18d01c9a59f273e7184fba441"
+              "188c7b7f867a02d0934cdf7945db552d732f6f71"
             ]
           },
           "solution": {
@@ -179,7 +179,7 @@
               "src/server.js"
             ],
             "commits": [
-              "9d2fd01af204381f150ad5593ffb858761504444"
+              "68278bf91b40e461061853204cd12cbe226b3c06"
             ]
           },
           "content": "Mount the `express.static()` middleware for all requests with `app.use()`. The absolute path to the assets folder is `\\_\\_dirname + /public`.\nNow your app should be able to serve a CSS stylesheet. From outside, the public folder will appear mounted to the root directory. Your front-page should look a little better now!"
@@ -199,7 +199,7 @@
               "src/server.js"
             ],
             "commits": [
-              "b96e342c24e157a027000ca66d0902fe4a845af2"
+              "9c810c92692cc235dc6a9ab16f6844af5808ddf5"
             ]
           },
           "solution": {
@@ -207,7 +207,7 @@
               "src/server.js"
             ],
             "commits": [
-              "60f63c186b0fd9e78dc32e5ba930e19294ae51cc"
+              "8156d5e4ec39fd86cc2e72daa0858730eef14596"
             ]
           },
           "content": "Serve the object `{\"message\": \"Hello json\"}` as a response, in JSON format, to GET requests to the `/json` route. Then point your browser to `your-app-url/json`, you should see the message on the screen."
@@ -227,7 +227,7 @@
               ".env"
             ],
             "commits": [
-              "1bfe127a164b0ab0d4a3cf129bda6d7b85e8304e"
+              "9156ea6c1b5acfc81cac088e64f24e03c7ebe4f4"
             ]
           },
           "solution": {
@@ -235,7 +235,7 @@
               ".env"
             ],
             "commits": [
-              "222b30f07015c0f9ff7a7c7a4a37c1644996e06f"
+              "834ac8744f54145943d25d5839f246c377a48e32"
             ]
           },
           "content": "Create a .env file in the root of your project."
@@ -247,7 +247,7 @@
               ".env"
             ],
             "commits": [
-              "c77df7152cfb2d01edaded49d552fd9b51eaf629"
+              "a69c321c4e31550a4ae8161f3b3badcd5790def3"
             ]
           },
           "solution": {
@@ -255,7 +255,7 @@
               ".env"
             ],
             "commits": [
-              "3eb37de63fbef93a8b18fac6d986fa6688074bf5"
+              "5624b7bd752e5ebb78ae35751cfb01d8d91b3fd4"
             ]
           },
           "content": "Add the .env file to your .gitignore file. It should be kept a secret."
@@ -267,7 +267,7 @@
               ".gitignore"
             ],
             "commits": [
-              "d7f51880f65e5dc092a67afb0ed88e9f7f773ee6"
+              "fc7c42b76232a9ac0bc675ac2c4d0080624a761d"
             ]
           },
           "solution": {
@@ -275,7 +275,7 @@
               ".gitignore"
             ],
             "commits": [
-              "f60de04e1f5a6e02778f3a60a2cd000c0d7866d5"
+              "5e4df1835e8b4129b9cfbf76e630450b2b90d57b"
             ]
           },
           "content": "Let's add an environment variable as a configuration option.\nStore the variable `MESSAGE_STYLE=uppercase` in the `.env` file."
@@ -291,7 +291,7 @@
               "node_modules/dotenv"
             ],
             "commits": [
-              "10cb246d7ed9360dc89c0df197251ceb82af29c7"
+              "b42a0e64dfc8282d2a44888a6b1a45e85e670821"
             ]
           },
           "solution": {
@@ -302,7 +302,7 @@
               "npm install"
             ],
             "commits": [
-              "8f637098761e287a8e90a9ca61c1b3736cd9416d"
+              "e08a9737e70ef2f1b604b8602be69a2b66a338d1"
             ]
           },
           "content": "Install the dependency for the package \"dotenv\" as a devDependency (`npm install --save-dev module`). The package helps make variables from the .env file available in your code."
@@ -314,7 +314,7 @@
               "src/server.js"
             ],
             "commits": [
-              "f42e85e44375f6facfb972dd19d667900956589f"
+              "02fa9ff2e59e4caf94359aae86bd65335a5dd0b1"
             ]
           },
           "solution": {
@@ -322,7 +322,7 @@
               "src/server.js"
             ],
             "commits": [
-              "23721e26ad68e47ed0abed6ee9a5903e597b92ce"
+              "e3ad892a942dc0efd7071e62857b705e99f2b8a4"
             ]
           },
           "content": "Load dependencies into your server.js by adding the following line to the top of your file:\n\n```js\nrequire(\"dotenv\").config();\n```\n\nYou can test if it works by logging `process.env.MESSAGE_STYLE`."
@@ -334,7 +334,7 @@
               "src/server.js"
             ],
             "commits": [
-              "1eabf3d88b96865a4bfa996470cc68e19fb6483d"
+              "9802902199508218e9a77579e7dba248a4352b7e"
             ]
           },
           "solution": {
@@ -342,7 +342,7 @@
               "src/server.js"
             ],
             "commits": [
-              "9216d16e2526cf25810331c1d2f64c18ecb0d73c"
+              "ddb52d0b974968813c180fe9ea608507e26f11d2"
             ]
           },
           "content": "Tell the GET `/json` route handler that you created in the last challenge to transform the response object’s message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should become `{\"message\": \"HELLO JSON\"}`."
@@ -362,7 +362,7 @@
               "src/server.js"
             ],
             "commits": [
-              "29033e496f2aed143f93b47f90a3009f08eb3eb7"
+              "be8d22ed9d9ab0418d57451d3d293fda93fe3e48"
             ]
           },
           "solution": {
@@ -370,7 +370,7 @@
               "src/server.js"
             ],
             "commits": [
-              "6eca494b7dc35c690410e58adf1c657e00d70258"
+              "8e4a46ec71e1b42cbffd0faafb1f394022fe96cf"
             ]
           },
           "content": "Build a simple logger. For every request, it should log to the console a string taking the following format: `method path - ip`. An example would look like this: `GET /json - ::ffff:127.0.0.1`. Note that there is a space between `method` and `path` and that the dash separating `path` and `ip` is surrounded by a space on both sides. You can get the request method (http verb), the relative route path, and the caller’s ip from the request object using `req.method`, `req.path` and `req.ip`. Remember to call `next()` when you are done, or your server will be stuck forever. Be sure to have the ‘Logs’ opened, and see what happens when some request arrives.\n\n**Note:** Express evaluates functions in the order they appear in the code. This is true for middleware too. If you want it to work for all the routes, it should be mounted before them."
@@ -390,7 +390,7 @@
               "src/server.js"
             ],
             "commits": [
-              "dfe94f2bd19564f4f38a96e21d5103b22a66a829"
+              "e789ec11b33189c1cccd81bb174f553226da1456"
             ]
           },
           "solution": {
@@ -398,7 +398,7 @@
               "src/server.js"
             ],
             "commits": [
-              "59ae4feffa5670be50190635a31c6a452b67a29a"
+              "8b9b15672d6d6640a86cbc2c1c26890383a780e9"
             ]
           },
           "content": "In the route `app.get('/now', ...)` chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the `req.time` key. You can use `new Date().toString()`. In the handler, respond with a JSON object, taking the structure `{time: req.time}`.\n**Note:** The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct."
@@ -418,7 +418,7 @@
               "src/server.js"
             ],
             "commits": [
-              "bb600596e9844f982d159b55b7bdd4bc61a6e7e6"
+              "c35bf33be4a7bedadb28f91d43dbc688bf0f4fde"
             ]
           },
           "solution": {
@@ -426,7 +426,7 @@
               "src/server.js"
             ],
             "commits": [
-              "9fe2c67ca3d07b8d28d7961ed5b04f9d535152bd"
+              "5e65d83e4e5b04465fad5da58bbd0a919f458808"
             ]
           },
           "content": "Build an echo server, mounted at the route `GET /echo/:word`. Respond with a JSON object, taking the structure `{echo: word}`. You can find the word to be repeated at `req.params.word`."
@@ -446,7 +446,7 @@
               "src/server.js"
             ],
             "commits": [
-              "b5fdc1074b3eed07e89cfbef18eb79db86c9072f"
+              "3e5509b6c631aa4cd71dec147a6946eb0124e07f"
             ]
           },
           "solution": {
@@ -454,7 +454,7 @@
               "src/server.js"
             ],
             "commits": [
-              "7bc0f134266472d474855fd22174f30af56abde9"
+              "21d0ba4df867bbd67c1a344274e1825ded65671e"
             ]
           },
           "content": "Build an API endpoint, mounted at `GET /name`. Respond with a JSON document, taking the structure `{ name: 'firstname lastname'}`. The first and last name parameters should be encoded in a query string e.g. `?first=firstname&last=lastname`.\n\n**Note:** In the following exercise you are going to receive data from a POST request, at the same `/name` route path. If you want, you can use the method `app.route(path).get(handler).post(handler)`. This syntax allows you to chain different verb handlers on the same path route. You can save a bit of typing, and have cleaner code."
@@ -478,7 +478,7 @@
               "node_modules/body-parser"
             ],
             "commits": [
-              "fe5978237af387e2a9bfc5f4e54b54c7efe1b57b"
+              "a59768d4392e655750bfad1f1e7ddeb5d14524ef"
             ]
           },
           "solution": {
@@ -489,7 +489,7 @@
               "npm install"
             ],
             "commits": [
-              "7cc0c61869b7268aae20eeb67fb74eb1595ff0e2"
+              "cccabef07ce9ebbf6a09ea1150104299b18a19a1"
             ]
           },
           "content": "Install the `body-parser` module in your `package.json`."
@@ -501,7 +501,7 @@
               "src/server.js"
             ],
             "commits": [
-              "cd059c44f9e2b2ad6a3f0897fcd543a395562d86"
+              "317b66af4280fcbeeeaea43d8c09e47d01e4eb8d"
             ]
           },
           "solution": {
@@ -509,7 +509,7 @@
               "src/server.js"
             ],
             "commits": [
-              "2285a9ef9e91ca16a2cd486c98fae3e65ab05f03"
+              "14d0224037b8e00eeede0bc1a6a85c8000ad624e"
             ]
           },
           "content": "Require \"body-parser\" at the top of the server.js file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: false})`. Pass to `app.use()` the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it."

@@ -11,14 +11,14 @@ config:
     directory: coderoad
   repo:
     uri: https://github.com/coderoad/fcc-basic-node-and-express
-    branch: v0.4.0
+    branch: v0.4.1
   dependencies:
     - name: node
       version: '>=10'
 levels:
-  - id: L1
+  - id: '1'
     steps:
-      - id: L1S1
+      - id: '1.1'
         setup:
           commands:
             - npm install
@@ -32,7 +32,7 @@ levels:
             - package.json
           commands:
             - npm install
-      - id: L1S2
+      - id: '1.2'
         setup:
           files:
             - src/server.js
@@ -42,9 +42,9 @@ levels:
           files:
             - src/server.js
           
-  - id: L2
+  - id: '2'
     steps:
-      - id: L2S1
+      - id: '2.1'
         setup:
           files:
             - src/server.js
@@ -53,57 +53,57 @@ levels:
         solution:
           files:
             - src/server.js
-  - id: L3
+  - id: '3'
     steps:
-      - id: L3S1
+      - id: '3.1'
         setup:
           files:
             - src/views/index.html
         solution:
           files:
             - src/server.js
-  - id: L4
+  - id: '4'
     steps:
-      - id: L4S1
+      - id: '4.1'
         setup:
           files:
             - src/public/style.css
         solution:
           files:
             - src/server.js
-  - id: L5
+  - id: '5'
     steps:
-      - id: L5S1
+      - id: '5.1'
         setup:
           files:
             - src/server.js
         solution:
           files:
             - src/server.js
-  - id: L6
+  - id: '6'
     steps:
-      - id: L6S1
+      - id: '6.1'
         setup:
           watchers:
             - .env
         solution:
           files:
             - .env
-      - id: L6S2
+      - id: '6.2'
         setup:
           files:
             - .env
         solution:
           files:
             - .env
-      - id: L6S3
+      - id: '6.3'
         setup:
           files:
             - .gitignore
         solution:
           files:
             - .gitignore
-      - id: L6S4
+      - id: '6.4'
         setup:
           files:
             - package.json
@@ -115,59 +115,59 @@ levels:
             - package.json
           commands:
             - npm install
-      - id: L6S5
+      - id: '6.5'
         setup:
           files:
             - src/server.js
         solution:
           files:
             - src/server.js
-      - id: L6S6
+      - id: '6.6'
         setup:
           files:
             - src/server.js
         solution:
           files:
             - src/server.js
-  - id: L7
+  - id: '7'
     steps:
-      - id: L7S1
+      - id: '7.1'
         setup:
           files:
             - src/server.js
         solution:
           files:
             - src/server.js
-  - id: L8
+  - id: '8'
     steps:
-      - id: L8S1
+      - id: '8.1'
         setup:
           files:
             - src/server.js
         solution:
           files:
             - src/server.js
-  - id: L9
+  - id: '9'
     steps:
-      - id: L9S1
+      - id: '9.1'
         setup:
           files:
             - src/server.js
         solution:
           files:
             - src/server.js
-  - id: L10
+  - id: '10'
     steps:
-      - id: L10S1
+      - id: '10.1'
         setup:
           files:
             - src/server.js
         solution:
           files:
             - src/server.js
-  - id: L11
+  - id: '11'
     steps:
-      - id: L11S1
+      - id: '11.1'
         setup:
           files:
             - package.json
@@ -179,7 +179,7 @@ levels:
             - package.json
           commands:
             - npm install
-      - id: L11S2
+      - id: '11.2'
         setup:
           files:
             - src/server.js
