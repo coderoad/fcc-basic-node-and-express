@@ -23,7 +23,7 @@
     },
     "repo": {
       "uri": "https://github.com/coderoad/fcc-basic-node-and-express",
-      "branch": "v0.4.0"
+      "branch": "v0.4.1"
     },
     "dependencies": [
       {
@@ -34,10 +34,13 @@
   },
   "levels": [
     {
-      "id": "L1",
+      "id": "1",
+      "title": "Meet the Node Console",
+      "summary": "Introduction to the Node console",
+      "content": "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules - small, independent programs - that help facilitate this purpose. Some of the core modules include:\n\n- HTTP: a module that acts as a server\n- File System: a module that reads and modifies files\n- Path: a module for working with directory and file paths\n- Assertion Testing: a module that checks code against prescribed constraints\n\nExpress, while not included with Node.js, is another module often used with it. Express runs between the server created by Node.js and the frontend pages of a web application. Express also handles an application's routing. Routing directs users to the correct page based on their interaction with the application. While there are alternatives to using Express, its simplicity makes it a good place to begin when learning the interaction between a backend powered by Node.js and the frontend.\nDuring the development process, it is important to be able to check what’s going on in your code. Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see the console output in a terminal. On Glitch you can open the logs in the lower part of the screen. You can toggle the log panel with the button ‘Logs’ (lower-left, inside the tools menu).\n\nWe recommend to keep the log panel open while working at these challenges. By reading the logs, you can be aware of the nature of errors that may occur.",
       "steps": [
         {
-          "id": "L1S1",
+          "id": "1.1",
           "setup": {
             "commands": [
               "npm install"
@@ -50,7 +53,7 @@
               "node_modules/express"
             ],
             "commits": [
-              "18286aaa317b79a818fabe5dba5bfe090f9de94a"
+              "818a21d1234d6d47cf44346e159a2dfc33bf2b24"
             ]
           },
           "solution": {
@@ -61,13 +64,13 @@
               "npm install"
             ],
             "commits": [
-              "3880e2989e3a32268f1ca5f58ff854754be9f12e"
+              "54805b717f3579ec96d0602a0f652bb0ce847367"
             ]
           },
           "content": "NPM install the \"express\" library module version. Use version 4.x."
         },
         {
-          "id": "L1S2",
+          "id": "1.2",
           "setup": {
             "files": [
               "src/server.js"
@@ -76,7 +79,7 @@
               "cd coderoad && npm install"
             ],
             "commits": [
-              "b1219dbbaf819df77a1b6721d47e69eb362a7f13"
+              "1907ceb5346fc4cf514f6cbb0f92f51e977fd741"
             ]
           },
           "solution": {
@@ -84,21 +87,21 @@
               "src/server.js"
             ],
             "commits": [
-              "2d49871559a20ea387d1fa0d49ada4e59a162ce8"
+              "0a8de8c1bb5be3eeb6f2585ad02a6c9d6d1635d8"
             ]
           },
           "content": "Modify the `server.js` file to log \"Hello World\" to the console."
         }
-      ],
-      "title": "Meet the Node Console",
-      "summary": "Introduction to the Node console",
-      "content": "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules - small, independent programs - that help facilitate this purpose. Some of the core modules include:\n\n- HTTP: a module that acts as a server\n- File System: a module that reads and modifies files\n- Path: a module for working with directory and file paths\n- Assertion Testing: a module that checks code against prescribed constraints\n\nExpress, while not included with Node.js, is another module often used with it. Express runs between the server created by Node.js and the frontend pages of a web application. Express also handles an application's routing. Routing directs users to the correct page based on their interaction with the application. While there are alternatives to using Express, its simplicity makes it a good place to begin when learning the interaction between a backend powered by Node.js and the frontend.\nDuring the development process, it is important to be able to check what’s going on in your code. Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see the console output in a terminal. On Glitch you can open the logs in the lower part of the screen. You can toggle the log panel with the button ‘Logs’ (lower-left, inside the tools menu).\n\nWe recommend to keep the log panel open while working at these challenges. By reading the logs, you can be aware of the nature of errors that may occur."
+      ]
     },
     {
-      "id": "L2",
+      "id": "2",
+      "title": "Start a Working Server",
+      "summary": "Create a server",
+      "content": "In the first two lines of the file `server.js`, you can see how easy it is to create an Express app object. This object has several methods, and you will learn many of them in these challenges. One fundamental method is `app.listen(port)`. It tells your server to listen on a given port, putting it in running state. You can see it at the bottom of the file. It is inside comments because, for testing reasons, we need the app to be running in the background. All the code that you may want to add goes between these two fundamental parts. Glitch stores the port number in the environment variable `process.env.PORT`. Its value is `3000`.\n\nLet’s serve our first string! In Express, routes takes the following structure: `app.METHOD(PATH, HANDLER)`. METHOD is an http method in lowercase. PATH is a relative path on the server (it can be a string, or even a regular expression). HANDLER is a function that Express calls when the route is matched.\n\nHandlers take the form `function(req, res) {...}`, where req is the request object, and res is the response object. For example, the handler\n\n```js\nfunction(req, res) {\n  res.send('Response String');\n}\n```\n\nwill serve the string 'Response String'.",
       "steps": [
         {
-          "id": "L2S1",
+          "id": "2.1",
           "setup": {
             "files": [
               "src/server.js"
@@ -107,7 +110,7 @@
               "cd coderoad && npm install"
             ],
             "commits": [
-              "49ea32980ddfd984a318f8411b3ff08c3749d76a"
+              "5a31c98eee6fe40915cc12ca140dad3697283b46"
             ]
           },
           "solution": {
@@ -115,27 +118,27 @@
               "src/server.js"
             ],
             "commits": [
-              "2dffaa3752c9388ef6bc93f18b03bbdca685145b"
+              "debf7c86c4e9a5fe8e589f43f302b67c71fa7eaf"
             ]
           },
           "content": "Use the `app.get()` method to serve the string \"Hello Express\" to GET requests matching the `/` (root) path.\n\n**Note:** Be sure that your code works by looking at the logs, then see the results in your browser by running `npm start`."
         }
-      ],
-      "title": "Start a Working Server",
-      "summary": "Create a server",
-      "content": "In the first two lines of the file `server.js`, you can see how easy it is to create an Express app object. This object has several methods, and you will learn many of them in these challenges. One fundamental method is `app.listen(port)`. It tells your server to listen on a given port, putting it in running state. You can see it at the bottom of the file. It is inside comments because, for testing reasons, we need the app to be running in the background. All the code that you may want to add goes between these two fundamental parts. Glitch stores the port number in the environment variable `process.env.PORT`. Its value is `3000`.\n\nLet’s serve our first string! In Express, routes takes the following structure: `app.METHOD(PATH, HANDLER)`. METHOD is an http method in lowercase. PATH is a relative path on the server (it can be a string, or even a regular expression). HANDLER is a function that Express calls when the route is matched.\n\nHandlers take the form `function(req, res) {...}`, where req is the request object, and res is the response object. For example, the handler\n\n```js\nfunction(req, res) {\n  res.send('Response String');\n}\n```\n\nwill serve the string 'Response String'."
+      ]
     },
     {
-      "id": "L3",
+      "id": "3",
+      "title": "Serve an HTML File",
+      "summary": "Serve an HTML file over the server",
+      "content": "You can respond to requests with a file using the `res.sendFile(path)` method. You can put it inside the `app.get('/', ...)` route handler. Behind the scenes, this method will set the appropriate headers to instruct your browser on how to handle the file you want to send, according to its type. Then it will read and send the file. This method needs an absolute file path. We recommend you to use the Node global variable `\\_\\_dirname` to calculate the path like this:\n\n```js\nabsolutePath = __dirname + relativePath / file.ext;\n```",
       "steps": [
         {
-          "id": "L3S1",
+          "id": "3.1",
           "setup": {
             "files": [
               "src/views/index.html"
             ],
             "commits": [
-              "b5a36e2cb0aba64026ce8572c5cbf7ec0140fd4b"
+              "32bb02a2f576a888a22f999b65adf38c4da4101c"
             ]
           },
           "solution": {
@@ -143,27 +146,27 @@
               "src/server.js"
             ],
             "commits": [
-              "d35574e9fc84f002d6ec59198dc63965f9f649e8"
+              "9a9425e300b7b0cdd5b15a6841983bc26643feca"
             ]
           },
           "content": "Send the `/views/index.html` file as a response to GET requests to the `/` path. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.\n\n**Note:** You can edit the solution of the previous challenge or create a new one. If you create a new solution, keep in mind that Express evaluates routes from top to bottom, and executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string."
         }
-      ],
-      "title": "Serve an HTML File",
-      "summary": "Serve an HTML file over the server",
-      "content": "You can respond to requests with a file using the `res.sendFile(path)` method. You can put it inside the `app.get('/', ...)` route handler. Behind the scenes, this method will set the appropriate headers to instruct your browser on how to handle the file you want to send, according to its type. Then it will read and send the file. This method needs an absolute file path. We recommend you to use the Node global variable `\\_\\_dirname` to calculate the path like this:\n\n```js\nabsolutePath = __dirname + relativePath / file.ext;\n```"
+      ]
     },
     {
-      "id": "L4",
+      "id": "4",
+      "title": "Serve Static Assets",
+      "summary": "Serve static CSS",
+      "content": "An HTML server usually has one or more directories that are accessible by the user. You can place there the static assets needed by your application (stylesheets, scripts, images). In Express, you can put in place this functionality using the middleware `express.static(path)`, where the `path` parameter is the absolute path of the folder containing the assets. If you don’t know what middleware is... don’t worry, we will discuss in detail later. Basically, middleware are functions that intercept route handlers, adding some kind of information. A middleware needs to be mounted using the method `app.use(path, middlewareFunction)`. The first `path` argument is optional. If you don’t pass it, the middleware will be executed for all requests.",
       "steps": [
         {
-          "id": "L4S1",
+          "id": "4.1",
           "setup": {
             "files": [
               "src/public/style.css"
             ],
             "commits": [
-              "1c5438e7d8c7acf18d01c9a59f273e7184fba441"
+              "188c7b7f867a02d0934cdf7945db552d732f6f71"
             ]
           },
           "solution": {
@@ -171,27 +174,27 @@
               "src/server.js"
             ],
             "commits": [
-              "9d2fd01af204381f150ad5593ffb858761504444"
+              "68278bf91b40e461061853204cd12cbe226b3c06"
             ]
           },
           "content": "Mount the `express.static()` middleware for all requests with `app.use()`. The absolute path to the assets folder is `\\_\\_dirname + /public`.\nNow your app should be able to serve a CSS stylesheet. From outside, the public folder will appear mounted to the root directory. Your front-page should look a little better now!"
         }
-      ],
-      "title": "Serve Static Assets",
-      "summary": "Serve static CSS",
-      "content": "An HTML server usually has one or more directories that are accessible by the user. You can place there the static assets needed by your application (stylesheets, scripts, images). In Express, you can put in place this functionality using the middleware `express.static(path)`, where the `path` parameter is the absolute path of the folder containing the assets. If you don’t know what middleware is... don’t worry, we will discuss in detail later. Basically, middleware are functions that intercept route handlers, adding some kind of information. A middleware needs to be mounted using the method `app.use(path, middlewareFunction)`. The first `path` argument is optional. If you don’t pass it, the middleware will be executed for all requests."
+      ]
     },
     {
-      "id": "L5",
+      "id": "5",
+      "title": "Serve JSON on a Route",
+      "summary": "Serve JSON over a REST API",
+      "content": "While an HTML server serves (you guessed it!) HTML, an API serves data. A <dfn>REST</dfn> (REpresentational State Transfer) API allows data exchange in a simple way, without the need for clients to know any detail about the server. The client only needs to know where the resource is (the URL), and the action it wants to perform on it (the verb). The GET verb is used when you are fetching some information, without modifying anything. These days, the preferred data format for moving information around the web is JSON. Simply put, JSON is a convenient way to represent a JavaScript object as a string, so it can be easily transmitted.\n\nLet's create a simple API by creating a route that responds with JSON at the path `/json`. You can do it as usual, with the `app.get()` method. Inside the route handler, use the method `res.json()`, passing in an object as an argument. This method closes the request-response loop, returning the data. Behind the scenes, it converts a valid JavaScript object into a string, then sets the appropriate headers to tell your browser that you are serving JSON, and sends the data back. A valid object has the usual structure `{key: data}`. `data` can be a number, a string, a nested object or an array. `data` can also be a variable or the result of a function call, in which case it will be evaluated before being converted into a string.",
       "steps": [
         {
-          "id": "L5S1",
+          "id": "5.1",
           "setup": {
             "files": [
               "src/server.js"
             ],
             "commits": [
-              "b96e342c24e157a027000ca66d0902fe4a845af2"
+              "9c810c92692cc235dc6a9ab16f6844af5808ddf5"
             ]
           },
           "solution": {
@@ -199,27 +202,27 @@
               "src/server.js"
             ],
             "commits": [
-              "60f63c186b0fd9e78dc32e5ba930e19294ae51cc"
+              "8156d5e4ec39fd86cc2e72daa0858730eef14596"
             ]
           },
           "content": "Serve the object `{\"message\": \"Hello json\"}` as a response, in JSON format, to GET requests to the `/json` route. Then point your browser to `your-app-url/json`, you should see the message on the screen."
         }
-      ],
-      "title": "Serve JSON on a Route",
-      "summary": "Serve JSON over a REST API",
-      "content": "While an HTML server serves (you guessed it!) HTML, an API serves data. A <dfn>REST</dfn> (REpresentational State Transfer) API allows data exchange in a simple way, without the need for clients to know any detail about the server. The client only needs to know where the resource is (the URL), and the action it wants to perform on it (the verb). The GET verb is used when you are fetching some information, without modifying anything. These days, the preferred data format for moving information around the web is JSON. Simply put, JSON is a convenient way to represent a JavaScript object as a string, so it can be easily transmitted.\n\nLet's create a simple API by creating a route that responds with JSON at the path `/json`. You can do it as usual, with the `app.get()` method. Inside the route handler, use the method `res.json()`, passing in an object as an argument. This method closes the request-response loop, returning the data. Behind the scenes, it converts a valid JavaScript object into a string, then sets the appropriate headers to tell your browser that you are serving JSON, and sends the data back. A valid object has the usual structure `{key: data}`. `data` can be a number, a string, a nested object or an array. `data` can also be a variable or the result of a function call, in which case it will be evaluated before being converted into a string."
+      ]
     },
     {
-      "id": "L6",
+      "id": "6",
+      "title": "Use the .env File",
+      "summary": "Load secrets with the .env file",
+      "content": "The `.env` file is a hidden file that is used to pass environment variables to your application. This file is secret, no one but you can access it, and it can be used to store data that you want to keep private or hidden. For example, you can store API keys from external services or your database URI. You can also use it to store configuration options. By setting configuration options, you can change the behavior of your application, without the need to rewrite some code.\n\nThe environment variables are accessible from the app as `process.env.VAR_NAME`. The `process.env` object is a global Node object, and variables are passed as strings. By convention, the variable names are all uppercase, with words separated by an underscore. The `.env` is a shell file, so you don’t need to wrap names or values in quotes. It is also important to note that there cannot be space around the equals sign when you are assigning values to your variables, e.g. `VAR_NAME=value`. Usually, you will put each variable definition on a separate line.",
       "steps": [
         {
-          "id": "L6S1",
+          "id": "6.1",
           "setup": {
             "watchers": [
               ".env"
             ],
             "commits": [
-              "1bfe127a164b0ab0d4a3cf129bda6d7b85e8304e"
+              "9156ea6c1b5acfc81cac088e64f24e03c7ebe4f4"
             ]
           },
           "solution": {
@@ -227,19 +230,19 @@
               ".env"
             ],
             "commits": [
-              "222b30f07015c0f9ff7a7c7a4a37c1644996e06f"
+              "834ac8744f54145943d25d5839f246c377a48e32"
             ]
           },
           "content": "Create a .env file in the root of your project."
         },
         {
-          "id": "L6S2",
+          "id": "6.2",
           "setup": {
             "files": [
               ".env"
             ],
             "commits": [
-              "c77df7152cfb2d01edaded49d552fd9b51eaf629"
+              "a69c321c4e31550a4ae8161f3b3badcd5790def3"
             ]
           },
           "solution": {
@@ -247,19 +250,19 @@
               ".env"
             ],
             "commits": [
-              "3eb37de63fbef93a8b18fac6d986fa6688074bf5"
+              "5624b7bd752e5ebb78ae35751cfb01d8d91b3fd4"
             ]
           },
           "content": "Add the .env file to your .gitignore file. It should be kept a secret."
         },
         {
-          "id": "L6S3",
+          "id": "6.3",
           "setup": {
             "files": [
               ".gitignore"
             ],
             "commits": [
-              "d7f51880f65e5dc092a67afb0ed88e9f7f773ee6"
+              "fc7c42b76232a9ac0bc675ac2c4d0080624a761d"
             ]
           },
           "solution": {
@@ -267,13 +270,13 @@
               ".gitignore"
             ],
             "commits": [
-              "f60de04e1f5a6e02778f3a60a2cd000c0d7866d5"
+              "5e4df1835e8b4129b9cfbf76e630450b2b90d57b"
             ]
           },
           "content": "Let's add an environment variable as a configuration option.\nStore the variable `MESSAGE_STYLE=uppercase` in the `.env` file."
         },
         {
-          "id": "L6S4",
+          "id": "6.4",
           "setup": {
             "files": [
               "package.json"
@@ -283,7 +286,7 @@
               "node_modules/dotenv"
             ],
             "commits": [
-              "10cb246d7ed9360dc89c0df197251ceb82af29c7"
+              "b42a0e64dfc8282d2a44888a6b1a45e85e670821"
             ]
           },
           "solution": {
@@ -294,19 +297,19 @@
               "npm install"
             ],
             "commits": [
-              "8f637098761e287a8e90a9ca61c1b3736cd9416d"
+              "e08a9737e70ef2f1b604b8602be69a2b66a338d1"
             ]
           },
           "content": "Install the dependency for the package \"dotenv\" as a devDependency (`npm install --save-dev module`). The package helps make variables from the .env file available in your code."
         },
         {
-          "id": "L6S5",
+          "id": "6.5",
           "setup": {
             "files": [
               "src/server.js"
             ],
             "commits": [
-              "f42e85e44375f6facfb972dd19d667900956589f"
+              "02fa9ff2e59e4caf94359aae86bd65335a5dd0b1"
             ]
           },
           "solution": {
@@ -314,19 +317,19 @@
               "src/server.js"
             ],
             "commits": [
-              "23721e26ad68e47ed0abed6ee9a5903e597b92ce"
+              "e3ad892a942dc0efd7071e62857b705e99f2b8a4"
             ]
           },
           "content": "Load dependencies into your server.js by adding the following line to the top of your file:\n\n```js\nrequire(\"dotenv\").config();\n```\n\nYou can test if it works by logging `process.env.MESSAGE_STYLE`."
         },
         {
-          "id": "L6S6",
+          "id": "6.6",
           "setup": {
             "files": [
               "src/server.js"
             ],
             "commits": [
-              "1eabf3d88b96865a4bfa996470cc68e19fb6483d"
+              "9802902199508218e9a77579e7dba248a4352b7e"
             ]
           },
           "solution": {
@@ -334,27 +337,27 @@
               "src/server.js"
             ],
             "commits": [
-              "9216d16e2526cf25810331c1d2f64c18ecb0d73c"
+              "ddb52d0b974968813c180fe9ea608507e26f11d2"
             ]
           },
           "content": "Tell the GET `/json` route handler that you created in the last challenge to transform the response object’s message to uppercase if `process.env.MESSAGE_STYLE` equals `uppercase`. The response object should become `{\"message\": \"HELLO JSON\"}`."
         }
-      ],
-      "title": "Use the .env File",
-      "summary": "Load secrets with the .env file",
-      "content": "The `.env` file is a hidden file that is used to pass environment variables to your application. This file is secret, no one but you can access it, and it can be used to store data that you want to keep private or hidden. For example, you can store API keys from external services or your database URI. You can also use it to store configuration options. By setting configuration options, you can change the behavior of your application, without the need to rewrite some code.\n\nThe environment variables are accessible from the app as `process.env.VAR_NAME`. The `process.env` object is a global Node object, and variables are passed as strings. By convention, the variable names are all uppercase, with words separated by an underscore. The `.env` is a shell file, so you don’t need to wrap names or values in quotes. It is also important to note that there cannot be space around the equals sign when you are assigning values to your variables, e.g. `VAR_NAME=value`. Usually, you will put each variable definition on a separate line."
+      ]
     },
     {
-      "id": "L7",
+      "id": "7",
+      "title": "Root-Level Request Logger Middleware",
+      "summary": "Add logger middleware",
+      "content": "Earlier, you were introduced to the `express.static()` middleware function. Now it’s time to see what middleware is, in more detail. Middleware functions are functions that take 3 arguments: the request object, the response object, and the next function in the application’s request-response cycle. These functions execute some code that can have side effects on the app, and usually add information to the request or response objects. They can also end the cycle by sending a response when some condition is met. If they don’t send the response when they are done, they start the execution of the next function in the stack. This triggers calling the 3rd argument, `next()`.\n\nLook at the following example:\n\n```js\nfunction(req, res, next) {\n  console.log(\"I'm a middleware...\");\n  next();\n}\n```\n\nLet’s suppose you mounted this function on a route. When a request matches the route, it displays the string “I’m a middleware…”, then it executes the next function in the stack.\n\nIn this exercise, you are going to build root-level middleware. As you have seen in challenge 4, to mount a middleware function at root level, you can use the `app.use(&lt;mware-function&gt;)` method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use `app.post(&lt;mware-function&gt;)`. Analogous methods exist for all the HTTP verbs (GET, DELETE, PUT, …).",
       "steps": [
         {
-          "id": "L7S1",
+          "id": "7.1",
           "setup": {
             "files": [
               "src/server.js"
             ],
             "commits": [
-              "29033e496f2aed143f93b47f90a3009f08eb3eb7"
+              "be8d22ed9d9ab0418d57451d3d293fda93fe3e48"
             ]
           },
           "solution": {
@@ -362,27 +365,27 @@
               "src/server.js"
             ],
             "commits": [
-              "6eca494b7dc35c690410e58adf1c657e00d70258"
+              "8e4a46ec71e1b42cbffd0faafb1f394022fe96cf"
             ]
           },
           "content": "Build a simple logger. For every request, it should log to the console a string taking the following format: `method path - ip`. An example would look like this: `GET /json - ::ffff:127.0.0.1`. Note that there is a space between `method` and `path` and that the dash separating `path` and `ip` is surrounded by a space on both sides. You can get the request method (http verb), the relative route path, and the caller’s ip from the request object using `req.method`, `req.path` and `req.ip`. Remember to call `next()` when you are done, or your server will be stuck forever. Be sure to have the ‘Logs’ opened, and see what happens when some request arrives.\n\n**Note:** Express evaluates functions in the order they appear in the code. This is true for middleware too. If you want it to work for all the routes, it should be mounted before them."
         }
-      ],
-      "title": "Root-Level Request Logger Middleware",
-      "summary": "Add logger middleware",
-      "content": "Earlier, you were introduced to the `express.static()` middleware function. Now it’s time to see what middleware is, in more detail. Middleware functions are functions that take 3 arguments: the request object, the response object, and the next function in the application’s request-response cycle. These functions execute some code that can have side effects on the app, and usually add information to the request or response objects. They can also end the cycle by sending a response when some condition is met. If they don’t send the response when they are done, they start the execution of the next function in the stack. This triggers calling the 3rd argument, `next()`.\n\nLook at the following example:\n\n```js\nfunction(req, res, next) {\n  console.log(\"I'm a middleware...\");\n  next();\n}\n```\n\nLet’s suppose you mounted this function on a route. When a request matches the route, it displays the string “I’m a middleware…”, then it executes the next function in the stack.\n\nIn this exercise, you are going to build root-level middleware. As you have seen in challenge 4, to mount a middleware function at root level, you can use the `app.use(&lt;mware-function&gt;)` method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use `app.post(&lt;mware-function&gt;)`. Analogous methods exist for all the HTTP verbs (GET, DELETE, PUT, …)."
+      ]
     },
     {
-      "id": "L8",
+      "id": "8",
+      "title": "Chain Middleware",
+      "summary": "Combine middleware in a chain",
+      "content": "Middleware can be mounted at a specific route using `app.METHOD(path, middlewareFunction)`. Middleware can also be chained inside route definition.\nLook at the following example:\n\n```js\napp.get(\n  \"/user\",\n  function(req, res, next) {\n    req.user = getTheUserSync(); // Hypothetical synchronous operation\n    next();\n  },\n  function(req, res) {\n    res.send(req.user);\n  }\n);\n```\n\nThis approach is useful to split the server operations into smaller units. That leads to a better app structure, and the possibility to reuse code in different places. This approach can also be used to perform some validation on the data. At each point of the middleware stack you can block the execution of the current chain and pass control to functions specifically designed to handle errors. Or you can pass control to the next matching route, to handle special cases. We will see how in the advanced Express section.",
       "steps": [
         {
-          "id": "L8S1",
+          "id": "8.1",
           "setup": {
             "files": [
               "src/server.js"
             ],
             "commits": [
-              "dfe94f2bd19564f4f38a96e21d5103b22a66a829"
+              "e789ec11b33189c1cccd81bb174f553226da1456"
             ]
           },
           "solution": {
@@ -390,27 +393,27 @@
               "src/server.js"
             ],
             "commits": [
-              "59ae4feffa5670be50190635a31c6a452b67a29a"
+              "8b9b15672d6d6640a86cbc2c1c26890383a780e9"
             ]
           },
           "content": "In the route `app.get('/now', ...)` chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the `req.time` key. You can use `new Date().toString()`. In the handler, respond with a JSON object, taking the structure `{time: req.time}`.\n**Note:** The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct."
         }
-      ],
-      "title": "Chain Middleware",
-      "summary": "Combine middleware in a chain",
-      "content": "Middleware can be mounted at a specific route using `app.METHOD(path, middlewareFunction)`. Middleware can also be chained inside route definition.\nLook at the following example:\n\n```js\napp.get(\n  \"/user\",\n  function(req, res, next) {\n    req.user = getTheUserSync(); // Hypothetical synchronous operation\n    next();\n  },\n  function(req, res) {\n    res.send(req.user);\n  }\n);\n```\n\nThis approach is useful to split the server operations into smaller units. That leads to a better app structure, and the possibility to reuse code in different places. This approach can also be used to perform some validation on the data. At each point of the middleware stack you can block the execution of the current chain and pass control to functions specifically designed to handle errors. Or you can pass control to the next matching route, to handle special cases. We will see how in the advanced Express section."
+      ]
     },
     {
-      "id": "L9",
+      "id": "9",
+      "title": "Route Parameter Input",
+      "summary": "Pass params in route names",
+      "content": "When building an API, we have to allow users to communicate to us what they want to get from our service. For example, if the client is requesting information about a user stored in the database, they need a way to let us know which user they're interested in. One possible way to achieve this result is by using route parameters. Route parameters are named segments of the URL, delimited by slashes (/). Each segment captures the value of the part of the URL which matches its position. The captured values can be found in the `req.params` object.\n\n<blockquote>route_path: '/user/:userId/book/:bookId'<br>actual_request_URL: '/user/546/book/6754' <br>req.params: {userId: '546', bookId: '6754'}</blockquote>",
       "steps": [
         {
-          "id": "L9S1",
+          "id": "9.1",
           "setup": {
             "files": [
               "src/server.js"
             ],
             "commits": [
-              "bb600596e9844f982d159b55b7bdd4bc61a6e7e6"
+              "c35bf33be4a7bedadb28f91d43dbc688bf0f4fde"
             ]
           },
           "solution": {
@@ -418,27 +421,27 @@
               "src/server.js"
             ],
             "commits": [
-              "9fe2c67ca3d07b8d28d7961ed5b04f9d535152bd"
+              "5e65d83e4e5b04465fad5da58bbd0a919f458808"
             ]
           },
           "content": "Build an echo server, mounted at the route `GET /echo/:word`. Respond with a JSON object, taking the structure `{echo: word}`. You can find the word to be repeated at `req.params.word`."
         }
-      ],
-      "title": "Route Parameter Input",
-      "summary": "Pass params in route names",
-      "content": "When building an API, we have to allow users to communicate to us what they want to get from our service. For example, if the client is requesting information about a user stored in the database, they need a way to let us know which user they're interested in. One possible way to achieve this result is by using route parameters. Route parameters are named segments of the URL, delimited by slashes (/). Each segment captures the value of the part of the URL which matches its position. The captured values can be found in the `req.params` object.\n\n<blockquote>route_path: '/user/:userId/book/:bookId'<br>actual_request_URL: '/user/546/book/6754' <br>req.params: {userId: '546', bookId: '6754'}</blockquote>"
+      ]
     },
     {
-      "id": "L10",
+      "id": "10",
+      "title": "Query Parameter Input",
+      "summary": "Pass params in a query string",
+      "content": "Another common way to get input from the client is by encoding the data after the route path, using a query string. The query string is delimited by a question mark (?), and includes field=value couples. Each couple is separated by an ampersand (&). Express can parse the data from the query string, and populate the object `req.query`. Some characters, like the percent (%), cannot be in URLs and have to be encoded in a different format before you can send them. If you use the API from JavaScript, you can use specific methods to encode/decode these characters.\n\n<blockquote>route_path: '/library'<br>actual_request_URL: '/library?userId=546&bookId=6754' <br>req.query: {userId: '546', bookId: '6754'}</blockquote>",
       "steps": [
         {
-          "id": "L10S1",
+          "id": "10.1",
           "setup": {
             "files": [
               "src/server.js"
             ],
             "commits": [
-              "b5fdc1074b3eed07e89cfbef18eb79db86c9072f"
+              "3e5509b6c631aa4cd71dec147a6946eb0124e07f"
             ]
           },
           "solution": {
@@ -446,21 +449,21 @@
               "src/server.js"
             ],
             "commits": [
-              "7bc0f134266472d474855fd22174f30af56abde9"
+              "21d0ba4df867bbd67c1a344274e1825ded65671e"
             ]
           },
           "content": "Build an API endpoint, mounted at `GET /name`. Respond with a JSON document, taking the structure `{ name: 'firstname lastname'}`. The first and last name parameters should be encoded in a query string e.g. `?first=firstname&last=lastname`.\n\n**Note:** In the following exercise you are going to receive data from a POST request, at the same `/name` route path. If you want, you can use the method `app.route(path).get(handler).post(handler)`. This syntax allows you to chain different verb handlers on the same path route. You can save a bit of typing, and have cleaner code."
         }
-      ],
-      "title": "Query Parameter Input",
-      "summary": "Pass params in a query string",
-      "content": "Another common way to get input from the client is by encoding the data after the route path, using a query string. The query string is delimited by a question mark (?), and includes field=value couples. Each couple is separated by an ampersand (&). Express can parse the data from the query string, and populate the object `req.query`. Some characters, like the percent (%), cannot be in URLs and have to be encoded in a different format before you can send them. If you use the API from JavaScript, you can use specific methods to encode/decode these characters.\n\n<blockquote>route_path: '/library'<br>actual_request_URL: '/library?userId=546&bookId=6754' <br>req.query: {userId: '546', bookId: '6754'}</blockquote>"
+      ]
     },
     {
-      "id": "L11",
+      "id": "11",
+      "title": "Body-Parser",
+      "summary": "Parse JSON from POST requests",
+      "content": "Besides GET, there is another common HTTP verb, it is POST. POST is the default method used to send client data with HTML forms. In REST convention, POST is used to send data to create new items in the database (a new user, or a new blog post). You don’t have a database in this project, but you are going to learn how to handle POST requests anyway.\nIn these kind of requests, the data doesn’t appear in the URL, it is hidden in the request body. This is a part of the HTML request, also called payload. Since HTML is text-based, even if you don’t see the data, it doesn’t mean that it is secret. The raw content of an HTTP POST request is shown below:\n\n```http\nPOST /path/subpath HTTP/1.0\nFrom: john@example.com\nUser-Agent: someBrowser/1.0\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 20\nname=John+Doe&age=25\n```\n\nAs you can see, the body is encoded like the query string. This is the default format used by HTML forms. With Ajax, you can also use JSON to handle data having a more complex structure. There is also another type of encoding: multipart/form-data. This one is used to upload binary files.\nIn this exercise, you will use a urlencoded body. To parse the data coming from POST requests, you have to install the `body-parser` package. This package allows you to use a series of middleware, which can decode data in different formats.",
       "steps": [
         {
-          "id": "L11S1",
+          "id": "11.1",
           "setup": {
             "files": [
               "package.json"
@@ -470,7 +473,7 @@
               "node_modules/body-parser"
             ],
             "commits": [
-              "fe5978237af387e2a9bfc5f4e54b54c7efe1b57b"
+              "a59768d4392e655750bfad1f1e7ddeb5d14524ef"
             ]
           },
           "solution": {
@@ -481,19 +484,19 @@
               "npm install"
             ],
             "commits": [
-              "7cc0c61869b7268aae20eeb67fb74eb1595ff0e2"
+              "cccabef07ce9ebbf6a09ea1150104299b18a19a1"
             ]
           },
           "content": "Install the `body-parser` module in your `package.json`."
         },
         {
-          "id": "L11S2",
+          "id": "11.2",
           "setup": {
             "files": [
               "src/server.js"
             ],
             "commits": [
-              "cd059c44f9e2b2ad6a3f0897fcd543a395562d86"
+              "317b66af4280fcbeeeaea43d8c09e47d01e4eb8d"
             ]
           },
           "solution": {
@@ -501,15 +504,12 @@
               "src/server.js"
             ],
             "commits": [
-              "2285a9ef9e91ca16a2cd486c98fae3e65ab05f03"
+              "14d0224037b8e00eeede0bc1a6a85c8000ad624e"
             ]
           },
           "content": "Require \"body-parser\" at the top of the server.js file. Store it in a variable named `bodyParser`. The middleware to handle urlencoded data is returned by `bodyParser.urlencoded({extended: false})`. Pass to `app.use()` the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it."
         }
-      ],
-      "title": "Body-Parser",
-      "summary": "Parse JSON from POST requests",
-      "content": "Besides GET, there is another common HTTP verb, it is POST. POST is the default method used to send client data with HTML forms. In REST convention, POST is used to send data to create new items in the database (a new user, or a new blog post). You don’t have a database in this project, but you are going to learn how to handle POST requests anyway.\nIn these kind of requests, the data doesn’t appear in the URL, it is hidden in the request body. This is a part of the HTML request, also called payload. Since HTML is text-based, even if you don’t see the data, it doesn’t mean that it is secret. The raw content of an HTTP POST request is shown below:\n\n```http\nPOST /path/subpath HTTP/1.0\nFrom: john@example.com\nUser-Agent: someBrowser/1.0\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 20\nname=John+Doe&age=25\n```\n\nAs you can see, the body is encoded like the query string. This is the default format used by HTML forms. With Ajax, you can also use JSON to handle data having a more complex structure. There is also another type of encoding: multipart/form-data. This one is used to upload binary files.\nIn this exercise, you will use a urlencoded body. To parse the data coming from POST requests, you have to install the `body-parser` package. This package allows you to use a series of middleware, which can decode data in different formats."
+      ]
     }
   ]
 }
