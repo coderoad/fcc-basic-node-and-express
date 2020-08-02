@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.4.1",
   "summary": {
     "title": "Basic Node & Express",
     "description": "Build a server with Node & Express"
@@ -11,15 +11,16 @@
         "filter": "--grep",
         "tap": "--reporter=mocha-tap-reporter"
       },
-      "setup": {
-        "commands": [
-          "npm install"
-        ],
-        "commits": [
-          "37411e3cae53dacb22f194949d7d0593e48a3fdd"
-        ]
-      },
+      
       "directory": "coderoad"
+    },
+    "setup": {
+      "commands": [
+        "cd coderoad && npm install"
+      ],
+      "commits": [
+        "37411e3cae53dacb22f194949d7d0593e48a3fdd"
+      ]
     },
     "repo": {
       "uri": "https://github.com/coderoad/fcc-basic-node-and-express",
@@ -36,8 +37,8 @@
     {
       "id": "1",
       "title": "Meet the Node Console",
-      "summary": "Introduction to the Node console",
-      "content": "Node.js is a JavaScript runtime that allows developers to write backend (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules - small, independent programs - that help facilitate this purpose. Some of the core modules include:\n\n- HTTP: a module that acts as a server\n- File System: a module that reads and modifies files\n- Path: a module for working with directory and file paths\n- Assertion Testing: a module that checks code against prescribed constraints\n\nExpress, while not included with Node.js, is another module often used with it. Express runs between the server created by Node.js and the frontend pages of a web application. Express also handles an application's routing. Routing directs users to the correct page based on their interaction with the application. While there are alternatives to using Express, its simplicity makes it a good place to begin when learning the interaction between a backend powered by Node.js and the frontend.\nDuring the development process, it is important to be able to check what’s going on in your code. Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see the console output in a terminal. On Glitch you can open the logs in the lower part of the screen. You can toggle the log panel with the button ‘Logs’ (lower-left, inside the tools menu).\n\nWe recommend to keep the log panel open while working at these challenges. By reading the logs, you can be aware of the nature of errors that may occur.",
+      "summary": "",
+      "content": "",
       "steps": [
         {
           "id": "1.1",
