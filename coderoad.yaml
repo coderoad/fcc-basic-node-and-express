@@ -1,4 +1,4 @@
-version: "0.4.1"
+version: "0.4.2"
 config:
   testRunner:
     command: ./node_modules/.bin/mocha
@@ -6,9 +6,9 @@ config:
       filter: --grep
       tap: --reporter=mocha-tap-reporter
     directory: coderoad
-   setup:
-      commands:
-        - cd coderoad && npm install
+  setup:
+    commands:
+      - cd coderoad && npm install
   repo:
     uri: https://github.com/coderoad/fcc-basic-node-and-express
     branch: v0.4.1
