@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.4.2",
   "summary": {
     "title": "Basic Node & Express",
     "description": "Build a server with Node & Express"
@@ -11,15 +11,15 @@
         "filter": "--grep",
         "tap": "--reporter=mocha-tap-reporter"
       },
-      "setup": {
-        "commands": [
-          "npm install"
-        ],
-        "commits": [
-          "37411e3cae53dacb22f194949d7d0593e48a3fdd"
-        ]
-      },
       "directory": "coderoad"
+    },
+    "setup": {
+      "commands": [
+        "cd coderoad && npm install"
+      ],
+      "commits": [
+        "37411e3cae53dacb22f194949d7d0593e48a3fdd"
+      ]
     },
     "repo": {
       "uri": "https://github.com/coderoad/fcc-basic-node-and-express",
